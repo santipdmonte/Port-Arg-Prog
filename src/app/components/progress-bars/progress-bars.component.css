@@ -1,0 +1,8 @@
+.content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    max-width: 960px;
+}
+
+/*  Maximo 3 ocn max-width y hacer responsive*/

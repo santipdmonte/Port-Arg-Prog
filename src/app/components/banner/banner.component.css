@@ -1,0 +1,22 @@
+#banner{
+    background-color: #4c5c96;
+}
+
+.banner-cont{
+    display: flex;
+    flex-direction: column-reverse;
+    max-width: 960px;
+    margin:auto;
+    padding: 80px 0px;
+    height: 400px;
+}
+
+.banner-name{
+    color: rgb(213, 236, 255);
+    font-size: 30px;
+}
+
+.banner-desc{
+    color: rgb(22, 21, 54);
+    font-size: 20px;
+}

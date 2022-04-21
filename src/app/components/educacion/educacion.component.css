@@ -1,0 +1,80 @@
+*{
+    background-color: #4c5c96;
+    color: #fff;
+}
+
+.wrapper{
+    display:flex;
+    flex-direction:column;
+    gap:30px;
+    max-width: 960px;
+    margin:auto;
+    padding: 40px 0;
+}
+
+.educaciones-content{
+    display:flex;
+    flex-direction:column;
+    gap: 20px;
+    justify-content:space-evenly;
+    padding-top:20px;
+    border-top: 2px solid rgba(156, 179, 255, 0.616);
+}
+
+.educacion-content{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.educacion-desc-cont{
+    display:flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.educacion-titulo{
+    font-size:30px;
+}
+
+.experiencias-desc{
+    font-size:18px;
+}
+
+.educacion-img{
+    width:130px;
+    height:130px;
+    border-radius: 50%;
+}
+
+
+
+
+/* ----- EDIT BOTTOM ------*/
+
+.cont-acercaDe, .inner{
+    position: relative;
+}
+.cont-edit-bottom{
+    display: flex;
+    gap: 7px;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.edit-bottom{
+    color: rgb(253, 182, 28);
+}
+
+/* Plus bottom */
+
+.center{
+  display: flex;
+  justify-content:center;
+  align-items:center; 
+}
+
+.border{
+  border: 1px solid #000;
+}

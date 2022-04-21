@@ -1,0 +1,27 @@
+
+
+.wrapper{
+    display:flex;
+    flex-direction:column;
+    text-align:right;
+    gap:30px;
+    max-width: 960px;
+    margin:auto;
+    padding: 40px 0;
+}
+
+.cont-habilidades{
+    padding-top:20px;
+    border-top: 2px solid rgba(59, 84, 165, 0.274);
+}
+
+
+.habilidades-titulo{
+    font-size:30px;
+    padding: 0px 20px
+}
+
+
+
+
+
