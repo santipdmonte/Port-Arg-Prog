@@ -1,0 +1,32 @@
+
+.proyectos-img{ 
+    max-width: 450px;  /* Adaptar imagenes altura y ancho*/
+    height: 300px;
+    width: 450px
+}
+
+.proyectos-desc{
+    font-size:18px;
+}
+
+.proyecto-content{
+    display:flex;
+    text-align:left;
+    align-items: center;
+    gap: 30px;
+}
+
+.cont_form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width: 80%;
+}
+
+.textaera_input{
+    height: 90px;
+}
+
+.btn{
+    width:40%;
+}

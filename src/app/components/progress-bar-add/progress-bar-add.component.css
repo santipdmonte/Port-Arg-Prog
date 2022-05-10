@@ -1,0 +1,12 @@
+.content{
+    text-align:left;
+    display: flex;
+    gap: 40px;
+    justify-content:center;
+    align-items:center;
+}
+.cont-form{
+    display: flex;
+    gap: 15px;
+    flex-direction:column;
+}

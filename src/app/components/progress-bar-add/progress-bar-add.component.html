@@ -1,0 +1,41 @@
+<div class="content">
+    <circle-progress 
+        title="{{habilidad_nombre}}"
+        [percent]="bar.progress"
+        class="circle"       
+        [space]="-10" 
+        [radius]="100" 
+        [outerStrokeWidth]="10"
+        [innerStrokeWidth]="10" 
+        [outerStrokeColor]="'#4882c2'" 
+        [innerStrokeColor]="'#e7e8ea'" 
+        [animation]="true"
+        [animationDuration]="1000">
+    </circle-progress>
+
+    <form class="cont-form" action="">
+
+        <p>Ingresar nombre del lenguaje/habilidad</p>
+        <input 
+            type="text" 
+            placeholder="Nombre del lenguaje/habilidad..."
+            name="habilidad_nombre"
+            id="habilidad_nombre"
+            [(ngModel)]="habilidad_nombre"
+        >
+
+        <input            
+            type="range"
+            name="habilidad_rango"
+            id="habilidad_rango"
+            min="0"
+            max="100"
+            step="5"
+            [(ngModel)]="habilidad_range"
+        >
+        
+        <input type="submit" value="Guardar habilidad" class="btn btn-block">
+
+    </form>
+
+</div>

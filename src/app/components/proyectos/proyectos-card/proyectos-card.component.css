@@ -1,0 +1,18 @@
+
+
+.proyecto-content{
+    max-width: 450px;
+    text-align:left;
+}
+
+.proyectos-img{ 
+    max-width: 450px;  /* Adaptar imagenes altura y ancho*/
+    height: 300px;
+    width: 450px
+}
+
+.proyectos-desc{
+    font-size:18px;
+}
+
+

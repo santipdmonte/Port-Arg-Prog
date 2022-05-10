@@ -1,0 +1,39 @@
+
+.content{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;  /* Para ajustar los botones*/
+}
+
+.desc{
+    font-size:18px;
+}
+
+.img-personal{
+    width:160px;
+    height:160px;
+    border-radius: 50%;
+}
+
+/* Style Botones*/
+
+.cont-button{
+    position: absolute;
+    display:flex;
+    gap: 10px;
+    top: 0;
+    right: 0;
+}
+
+.edit-button{
+    color: #fff;
+}
+
+.delete-button{
+    color:red;
+}
+
+
+
+

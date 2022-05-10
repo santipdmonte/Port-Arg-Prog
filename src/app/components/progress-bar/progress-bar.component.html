@@ -1,5 +1,20 @@
-<div align="center" style="margin-top:10%;">
-    <circle-progress [title]="bar.title" [percent]="bar.progress"  [space]="-10" [radius]="100" [outerStrokeWidth]="10"
-      [innerStrokeWidth]="10" [outerStrokeColor]="'#4882c2'" [innerStrokeColor]="'#e7e8ea'" [animation]="true"
-      [animationDuration]="1000"></circle-progress>
+<div class="content">
+    <circle-progress 
+      [title]="bar.title" 
+      [percent]="bar.progress"  
+      [space]="-10" 
+      [radius]="100" 
+      [outerStrokeWidth]="10"
+      [innerStrokeWidth]="10" 
+      [outerStrokeColor]="'#4882c2'" 
+      [innerStrokeColor]="'#e7e8ea'" 
+      [animation]="true"
+      [animationDuration]="1000">
+    </circle-progress>
+
+    <div class="cont-button">
+      <a href="#" class="button edit-button "><fa-icon [icon]="faPenToSquare" ></fa-icon></a>
+      <a href="#" class="button delete-button"><fa-icon [icon]="faTimes" ></fa-icon></a>
+    </div>
+
 </div>

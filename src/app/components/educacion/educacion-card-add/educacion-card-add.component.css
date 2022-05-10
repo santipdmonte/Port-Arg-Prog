@@ -1,0 +1,31 @@
+
+.educacion_content{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.educacion_img{
+    width:130px;
+    height:130px;
+    border-radius: 50%;
+}
+
+.cont_form{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    width: 80%;
+}
+
+.textaera_input{
+    height: 90px;
+}
+
+.btn{
+    width:40%;
+}
+
+
+
+

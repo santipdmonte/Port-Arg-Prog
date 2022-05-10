@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
@@ -12,6 +13,14 @@ import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { ProgressBarComponent } from './components/progress-bar/progress-bar.component';
 import { ProgressBarsComponent } from './components/progress-bars/progress-bars.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { ExperienciaCardComponent } from './components/experiencias/experiencia-card/experiencia-card.component';
+import { ExperienciaCardAddComponent } from './components/experiencias/experiencia-card-add/experiencia-card-add.component';
+import { ProgressBarAddComponent } from './components/progress-bar-add/progress-bar-add.component';
+import { EducacionCardComponent } from './components/educacion/educacion-card/educacion-card.component';
+import { EducacionCardAddComponent } from './components/educacion/educacion-card-add/educacion-card-add.component';
+import { ProyectosCardAddComponent } from './components/proyectos/proyectos-card-add/proyectos-card-add.component';
+import { ProyectosCardComponent } from './components/proyectos/proyectos-card/proyectos-card.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +33,14 @@ import { ProgressBarsComponent } from './components/progress-bars/progress-bars.
     HabilidadesComponent,
     ProyectosComponent,
     ProgressBarComponent,
-    ProgressBarsComponent
+    ProgressBarsComponent,
+    ExperienciaCardComponent,
+    ExperienciaCardAddComponent,
+    ProgressBarAddComponent,
+    EducacionCardComponent,
+    EducacionCardAddComponent,
+    ProyectosCardAddComponent,
+    ProyectosCardComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +60,9 @@ import { ProgressBarsComponent } from './components/progress-bars/progress-bars.
       "showBackground": false,
       "clockwise": false,
       "startFromZero": false,
-      "lazy": false})
+      "lazy": false}),
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

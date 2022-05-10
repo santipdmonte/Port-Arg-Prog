@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-experiencias',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiencias.component.css']
 })
 export class ExperienciasComponent implements OnInit {
+
+  faPenToSquare = faPenToSquare;
 
   constructor() { }
 

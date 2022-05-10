@@ -1,33 +1,15 @@
 <section id="wrapper">
-    <section id="one" class="wrapper spotlight style1">
+    <section id="one" class="cont-experiencias">
 
         <h2 class="titulo experiencias-titulo">Experiencias</h2>
 
-        <div class="experiencias-content">
+        <div class="cont-experiencias-cards">
 
-            <div class="experiencia-content">
-                <img src="assets/img/pic04.jpg" class="img-personal" alt="" />
-                <p class="experiencias-desc">Desarrolllo de multiples proyectos personales y para empresas. 400 horas de capacitacion y practicas de Desarrollo Web.  </p>
-            </div> 
-                
-            <div class="experiencia-content">
-                <img src="assets/img/pic05.jpg" class="img-personal" alt="" />
-                <p class="experiencias-desc">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque inventore culpa, possimus minus animi magni molestiae fuga dolor a voluptates dignissimos mollitia natus, necessitatibus nisi dolore obcaecati odio reiciendis unde. Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat aut ad accusantium praesentium quo facere ipsum repellat mollitia, soluta qui necessitatibus, voluptas architecto unde laborum. At sunt neque hic molestias.  </p>
-            </div> 
-            
-            <div class="experiencia-content">
-                <img src="assets/img/pic04.jpg" class="img-personal" alt="" />
-                <p class="experiencias-desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium alias, tempore aut hic voluptas libero et ipsa similique omnis saepe. Ratione odio molestias labore odit. Dolor voluptate natus perspiciatis similique!  </p>
-            </div> 
+            <app-experiencia-card></app-experiencia-card>            <!--- ngFor-->
+            <app-experiencia-card-add></app-experiencia-card-add>    <!--- ngIf-->
 
         </div>
-            
 
-        <!-- Boton Editar-->
-        <div class="cont-edit-bottom">
-            <a href="#" class="edit-bottom"><i class="far fa-edit fa-lg"></i></a>
-            <a href="#"class="edit-bottom"><i class="far fa-times-circle fa-lg"></i></a>
-        </div>
 
     </section>               
 </section>

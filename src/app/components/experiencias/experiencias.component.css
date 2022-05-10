@@ -3,7 +3,7 @@
     color: #fff;
 }
 
-.wrapper{
+.cont-experiencias{
     display:flex;
     flex-direction:column;
     gap:30px;
@@ -12,7 +12,7 @@
     padding: 40px 0;
 }
 
-.experiencias-content{
+.cont-experiencias-cards{
     display:flex;
     flex-direction:column;
     gap: 20px;
@@ -21,54 +21,13 @@
     border-top: 2px solid rgba(156, 179, 255, 0.616);
 }
 
-.experiencia-content{
-    display:flex;
-    align-items: center;
-    gap: 30px;
-}
+
 
 .experiencias-titulo{
     font-size:30px;
 }
 
-.experiencias-desc{
-    font-size:18px;
-}
-
-.img-personal{
-    width:160px;
-    height:160px;
-    border-radius: 50%;
-}
 
 
 
 
-/* ----- EDIT BOTTOM ------*/
-
-.cont-acercaDe, .inner{
-    position: relative;
-}
-.cont-edit-bottom{
-    display: flex;
-    gap: 7px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.edit-bottom{
-    color: rgb(253, 182, 28);
-}
-
-/* Plus bottom */
-
-.center{
-  display: flex;
-  justify-content:center;
-  align-items:center; 
-}
-
-.border{
-  border: 1px solid #000;
-}
