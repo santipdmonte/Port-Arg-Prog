@@ -3,6 +3,11 @@
     color: #fff;
 }
 
+.container-titulo{
+    display:flex;
+    justify-content:space-between;
+}
+
 .cont-experiencias{
     display:flex;
     flex-direction:column;
@@ -21,7 +26,11 @@
     border-top: 2px solid rgba(156, 179, 255, 0.616);
 }
 
-
+.add-exp{
+    width: 25%;
+    cursor: pointer;
+    background-color:green;
+}
 
 .experiencias-titulo{
     font-size:30px;

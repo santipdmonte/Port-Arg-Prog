@@ -6,7 +6,9 @@
         <div class="cont-habilidades">                       
 
             <app-progress-bars> </app-progress-bars>
-            <app-progress-bar-add></app-progress-bar-add>  <!--- ngIf -->
+            <app-progress-bar-add
+                *ngIf="showEditInterface"
+            ></app-progress-bar-add>  <!--- ngIf -->
 
         </div>
 

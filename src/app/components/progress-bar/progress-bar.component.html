@@ -12,7 +12,9 @@
       [animationDuration]="1000">
     </circle-progress>
 
-    <div class="cont-button">
+    <div 
+      class="cont-button"
+      *ngIf="showEditInterface">
       <app-button-edit-delete></app-button-edit-delete>
     </div>
 

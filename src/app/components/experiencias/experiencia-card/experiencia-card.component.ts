@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/service/ui.service';
 
 
 @Component({
@@ -9,7 +11,15 @@ import { Component, OnInit } from '@angular/core';
 export class ExperienciaCardComponent implements OnInit {
 
 
-  constructor() { }
+  showEditInterface: boolean = true;
+  subscription?: Subscription;
+
+  constructor(
+    private UiService: UiService
+  ) {
+    this.subscription = this.UiService.onToggle()
+                            .subscribe(value => this.showEditInterface = value)
+   }
 
   ngOnInit(): void {
   }

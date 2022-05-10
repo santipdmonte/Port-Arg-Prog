@@ -3,14 +3,30 @@
         <img class="logo-argprog" src="assets/img/logo.png">
     </div>
     <nav class="nav-container">
-        <div class="media-cont">
-            
+        
+        <!--
+        <div class="media-cont">    
             <a href="#" class="media"><i class="fab fa-github fa-lg"></i></a>
             <a href="#" class="media"><i class="fab fa-twitter fa-lg"></i></a> 
             <a href="#" class="media"><i class="fab fa-linkedin fa-lg"></i></a> 
-        </div>           
-        <a href="#menu" class="menu">Menu</a>
-        <a href="#" class="log">Iniciar Sesion</a>       
-        <a href="/edit" class="log">Editar</a>
+        </div>  
+        -->
+        
+        <div class="navbar" *ngIf="!showEditInterface">
+            <a href="#menu" class="menu">Menu</a>
+            <a href="#" class="log">Iniciar Sesion</a>       
+            <a 
+                class="log" 
+                (click)="toggleEditInterface()"
+            > Editar
+            </a>
+        </div>
+
+        <button
+            class="fin-edit"
+            *ngIf="showEditInterface"
+            (click)="toggleEditInterface()"          
+        >Finalizar edicion</button>
+        
     </nav>
 </header>

@@ -6,7 +6,9 @@
     
     <p class="proyectos-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quod maxime totam, provident quae possimus.</p>             
 
-    <div class="cont-button">
+    <div 
+        class="cont-button"
+        *ngIf="showEditInterface">
         <app-button-edit-delete></app-button-edit-delete>
     </div>
 

@@ -1,12 +1,21 @@
 <section id="wrapper">
     <section id="one" class="cont-experiencias">
 
-        <h2 class="titulo experiencias-titulo">Experiencias</h2>
+        <div class="container-titulo">
+            <h2 class="titulo experiencias-titulo">Experiencias</h2>
+            <button
+                class="add-exp"               
+                *ngIf="showEditInterface"
+            >Agregar Experiencia</button>   <!--- *ngIf="showEditInterface" -->
+        </div>
+        
 
         <div class="cont-experiencias-cards">
 
             <app-experiencia-card></app-experiencia-card>            <!--- ngFor-->
-            <app-experiencia-card-add></app-experiencia-card-add>    <!--- ngIf-->
+            <app-experiencia-card-add
+                *ngIf="showEditInterface"
+            ></app-experiencia-card-add>    <!--- ngIf-->
 
         </div>
 
