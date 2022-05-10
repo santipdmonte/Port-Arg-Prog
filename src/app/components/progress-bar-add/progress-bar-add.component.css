@@ -10,3 +10,13 @@
     gap: 15px;
     flex-direction:column;
 }
+
+
+.rango_cont{
+    display: flex;
+    gap: 10px;
+}
+
+.rango{
+    width: 90%;
+}

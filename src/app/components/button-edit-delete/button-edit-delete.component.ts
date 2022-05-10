@@ -3,11 +3,11 @@ import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-proyectos-card',
-  templateUrl: './proyectos-card.component.html',
-  styleUrls: ['./proyectos-card.component.css']
+  selector: 'app-button-edit-delete',
+  templateUrl: './button-edit-delete.component.html',
+  styleUrls: ['./button-edit-delete.component.css']
 })
-export class ProyectosCardComponent implements OnInit {
+export class ButtonEditDeleteComponent implements OnInit {
 
   faPenToSquare = faPenToSquare
   faTimes = faTimes
@@ -15,6 +15,14 @@ export class ProyectosCardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  onEdit(){
+    console.log("Edit!!!")
+  }
+
+  onDelete(){
+    console.log("Delete!!!")
   }
 
 }

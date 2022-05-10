@@ -21,6 +21,7 @@ import { EducacionCardComponent } from './components/educacion/educacion-card/ed
 import { EducacionCardAddComponent } from './components/educacion/educacion-card-add/educacion-card-add.component';
 import { ProyectosCardAddComponent } from './components/proyectos/proyectos-card-add/proyectos-card-add.component';
 import { ProyectosCardComponent } from './components/proyectos/proyectos-card/proyectos-card.component';
+import { ButtonEditDeleteComponent } from './components/button-edit-delete/button-edit-delete.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ProyectosCardComponent } from './components/proyectos/proyectos-card/pr
     EducacionCardComponent,
     EducacionCardAddComponent,
     ProyectosCardAddComponent,
-    ProyectosCardComponent
+    ProyectosCardComponent,
+    ButtonEditDeleteComponent
   ],
   imports: [
     BrowserModule,

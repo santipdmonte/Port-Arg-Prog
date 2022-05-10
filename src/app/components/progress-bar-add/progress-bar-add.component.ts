@@ -10,7 +10,7 @@ import { FormsModule } from '@angular/forms';
 export class ProgressBarAddComponent implements OnInit {
 
   habilidad_nombre: String = "";
-  habilidad_range: Number = 0;
+  habilidad_rango: Number = 0;
   number: Number = 4
 
   @Input() bar: Bar = new Bar();

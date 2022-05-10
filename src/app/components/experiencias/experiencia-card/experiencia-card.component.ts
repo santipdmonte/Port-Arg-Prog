@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+
 
 @Component({
   selector: 'app-experiencia-card',
@@ -9,8 +8,6 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class ExperienciaCardComponent implements OnInit {
 
-  faPenToSquare = faPenToSquare
-  faTimes = faTimes
 
   constructor() { }
 

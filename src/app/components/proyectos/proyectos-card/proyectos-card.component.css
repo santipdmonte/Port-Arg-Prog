@@ -3,6 +3,7 @@
 .proyecto-content{
     max-width: 450px;
     text-align:left;
+    position: relative;  /* Para ajustar los botones*/
 }
 
 .proyectos-img{ 
@@ -14,5 +15,15 @@
 .proyectos-desc{
     font-size:18px;
 }
+
+/* Style Botones*/
+
+.cont-button{
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+
 
 

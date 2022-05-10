@@ -1,0 +1,13 @@
+
+.cont-button{
+    display:flex;
+    gap: 10px;
+}
+
+.button{
+    cursor:pointer;
+}
+
+.button-delete{
+    color:red;
+}

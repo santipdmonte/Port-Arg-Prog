@@ -24,15 +24,20 @@
             [(ngModel)]="habilidad_nombre"
         >
 
-        <input            
-            type="range"
-            name="habilidad_rango"
-            id="habilidad_rango"
-            min="0"
-            max="100"
-            step="5"
-            [(ngModel)]="habilidad_range"
-        >
+        <div class="rango_cont">
+            <input
+                class="rango"            
+                type="range"
+                name="habilidad_rango"
+                id="habilidad_rango"
+                min="0"
+                max="100"
+                step="5"
+                [(ngModel)]="habilidad_rango"
+            >  
+             {{habilidad_rango}}
+        </div>
+        
         
         <input type="submit" value="Guardar habilidad" class="btn btn-block">
 

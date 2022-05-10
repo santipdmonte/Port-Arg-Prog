@@ -20,19 +20,11 @@
 
 .cont-button{
     position: absolute;
-    display:flex;
-    gap: 10px;
     top: 0;
     right: 0;
 }
 
-.edit-button{
-    color: #fff;
-}
 
-.delete-button{
-    color:red;
-}
 
 
 
