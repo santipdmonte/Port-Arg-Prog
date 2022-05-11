@@ -1,13 +1,15 @@
 <div class="content">
     
-    <img src="assets/img/pic04.jpg" class="img-personal" alt="" />
+    <img src="assets/img/pic04.jpg" class="personal-img" alt="" />
 
     <p class="desc">Desarrolllo de multiples proyectos personales y para empresas. 400 horas de capacitacion y practicas de Desarrollo Web.  </p>
     
     <div 
-    class="cont-button"
-    *ngIf="showEditInterface">
-        <app-button-edit-delete></app-button-edit-delete>
+        class="cont-button"
+        *ngIf="showEditInterface">
+        <app-button-edit-delete
+            *ngIf="showEditInterface"
+        ></app-button-edit-delete>
     </div>
 
 </div> 

@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
+
+
+
 
 
 @Component({
@@ -9,7 +13,6 @@ import { UiService } from 'src/app/service/ui.service';
   styleUrls: ['./experiencia-card.component.css']
 })
 export class ExperienciaCardComponent implements OnInit {
-
 
   showEditInterface: boolean = true;
   subscription?: Subscription;

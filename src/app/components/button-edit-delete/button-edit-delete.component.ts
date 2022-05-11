@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
@@ -12,17 +12,20 @@ export class ButtonEditDeleteComponent implements OnInit {
   faPenToSquare = faPenToSquare
   faTimes = faTimes
 
+  @Output() onDeleteClick = new EventEmitter();
+  @Output() onEditClick = new EventEmitter();
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
   onEdit(){
-    console.log("Edit!!!")
+    this.onEditClick.emit()
   }
 
   onDelete(){
-    console.log("Delete!!!")
+    this.onDeleteClick.emit()
   }
 
 }

@@ -32,4 +32,7 @@ export class EducacionComponent implements OnInit {
     })
   }
 
+
+
+
 }

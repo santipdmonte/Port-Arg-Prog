@@ -1,8 +1,9 @@
 
-.educacion-content{
+.content{
     display:flex;
     align-items: center;
     gap: 30px;
+    position: relative;  /* Para ajustar los botones*/
 }
 
 .educacion-desc-cont{
@@ -23,4 +24,12 @@
     width:130px;
     height:130px;
     border-radius: 50%;
+}
+
+/* Style Botones*/
+
+.cont-button{
+    position: absolute;
+    top: 0;
+    right: 0;
 }

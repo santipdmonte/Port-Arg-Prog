@@ -1,7 +1,19 @@
-<div class="educacion-content">
+<div class="content">
+
     <img src="assets/img/pic04.jpg" class="educacion-img" alt="" />
+
     <div class="educacion-desc-cont">
         <h2 class="educacion-title">{{edu.institucion_edu}}</h2> 
         <p class="educacion-desc">{{edu.descripcion_edu}}</p>      
     </div>
+
+    <div class="cont-button">  
+        
+    <app-button-edit-delete
+        *ngIf="showEditInterface"
+        (onDeleteClick)="delete(edu)"
+    ></app-button-edit-delete>  
+              
+    </div>
+
 </div> 
