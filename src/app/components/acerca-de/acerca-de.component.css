@@ -40,35 +40,7 @@
 .img-personal{
     width:200px;
     height:auto;
-    border-radius: 50%;
+    border-radius: 60%;
 }
 
 
-/* ----- EDIT BOTTOM ------*/
-
-.cont-acercaDe, .inner{
-    position: relative;
-}
-.cont-edit-bottom{
-    display: flex;
-    gap: 7px;
-    position: absolute;
-    top: 15px;
-    right: 15px;
-}
-
-.edit-bottom{
-    color: rgb(253, 182, 28);
-}
-
-/* Plus bottom */
-
-.center{
-  display: flex;
-  justify-content:center;
-  align-items:center; 
-}
-
-.border{
-  border: 1px solid #000;
-}

@@ -3,6 +3,10 @@ import { Component, OnInit } from '@angular/core';
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
 
+import { EducacionService } from 'src/app/service/educacion/educacion.service';
+import { Educacion } from '../../Models/Educacion';
+import { Observable, of } from 'rxjs';
+
 @Component({
   selector: 'app-educacion',
   templateUrl: './educacion.component.html',
@@ -12,15 +16,20 @@ export class EducacionComponent implements OnInit {
 
   showEditInterface: boolean = true;
   subscription?: Subscription;
+  educacion: Educacion[] = [];
 
   constructor(
-    private UiService: UiService
+    private UiService: UiService,
+    private educacionService: EducacionService
   ) {
     this.subscription = this.UiService.onToggle()
                             .subscribe(value => this.showEditInterface = value)
    }
 
   ngOnInit(): void {
+    this.educacionService.getEducacion().subscribe((educacion) => {
+      this.educacion = educacion
+    })
   }
 
 }

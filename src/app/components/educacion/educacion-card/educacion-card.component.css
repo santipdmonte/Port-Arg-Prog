@@ -1,0 +1,26 @@
+
+.educacion-content{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.educacion-desc-cont{
+    display:flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.educacion-titulo{
+    font-size:30px;
+}
+
+.experiencias-desc{
+    font-size:18px;
+}
+
+.educacion-img{
+    width:130px;
+    height:130px;
+    border-radius: 50%;
+}

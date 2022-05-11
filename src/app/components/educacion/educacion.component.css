@@ -12,6 +12,11 @@
     padding: 40px 0;
 }
 
+.container-titulo{
+    display:flex;
+    justify-content:space-between;
+}
+
 .educaciones-content{
     display:flex;
     flex-direction:column;

@@ -11,6 +11,7 @@ a{
     height: 75px;
     background-color: #2e3141;
     padding: 5px 10px;
+    z-index: 1000;
 }
 
 .logo-argprog{
@@ -44,11 +45,4 @@ a{
     gap: 25px;  
     min-width:200px;
 
-}
-.fin-edit{
-    background-color:rgb(232, 41, 41);
-    color: white;
-    border: 1px solid #fff;
-    padding: 5px;
-    cursor: pointer;
 }

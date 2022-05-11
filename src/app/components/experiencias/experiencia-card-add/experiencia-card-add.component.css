@@ -24,6 +24,11 @@
 
 .textaera-input{
     height: 90px;
+    resize: vertical;
+}
+
+.btn{
+    width: 40%;
 }
 
 /* --------- Style Imagen --------*/

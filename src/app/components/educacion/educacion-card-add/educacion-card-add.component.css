@@ -20,6 +20,7 @@
 
 .textaera_input{
     height: 90px;
+    resize: vertical;
 }
 
 .btn{

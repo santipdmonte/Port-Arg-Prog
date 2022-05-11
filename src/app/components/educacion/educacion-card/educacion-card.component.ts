@@ -1,4 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+
+import { Subscription } from 'rxjs';
+import { UiService } from 'src/app/service/ui.service';
+import { EducacionService } from 'src/app/service/educacion/educacion.service';
+import { Educacion } from '../../../Models/Educacion';
+
 
 @Component({
   selector: 'app-educacion-card',
@@ -7,7 +13,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EducacionCardComponent implements OnInit {
 
-  constructor() { }
+  @Input() edu: Educacion = {};
+
+  constructor(
+  ) { }
+
 
   ngOnInit(): void {
   }
