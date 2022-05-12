@@ -1,14 +1,15 @@
 <div class="educacion_content">
     <img src="assets/img/pic04.jpg" class="educacion_img" alt="" />
     
-    <form class="cont_form" action="">
+    <form class="cont_form" (ngSubmit)="onSubmit()">     <!--- *ngIf="showAddEdu"-->
 
         <!-- <input type="image"> -->
 
         <p>Nombre de la educación</p>
         <input 
             class="title_input"
-            name="title_input"
+            name="institucion_edu"
+            [(ngModel)]="institucion_edu"
             type="text"
             placeholder="Nombre de la educación"
         >
@@ -16,6 +17,8 @@
         <p>Descripcion de educación</p>
         <textarea 
             class="textaera_input" 
+            name="descripcion_edu"
+            [(ngModel)]="descripcion_edu"
             placeholder="Ingresar descripcion de educación..."
             maxlength="323"
             minlength="1">

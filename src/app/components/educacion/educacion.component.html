@@ -18,6 +18,7 @@
 
             <app-educacion-card-add
                 *ngIf="showEditInterface"
+                (onAddEducacion)="addEducacion($event)"
             ></app-educacion-card-add>
 
         </div>

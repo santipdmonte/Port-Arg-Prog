@@ -1,7 +1,13 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
-import { HttpClient, HttpHandler } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Educacion } from '../../Models/Educacion';
+
+const httpOptions = {
+  headers: new HttpHeaders ({
+    'Content-Type':'application/json'
+  })
+}
 
 @Injectable({
   providedIn: 'root'
@@ -23,4 +29,15 @@ export class EducacionService {
     return this.http.delete(this.apiUrl + "/delete/" + id);
 
   }
+
+  addEducacion(educacion: Educacion): Observable<Educacion>{
+    console.log(educacion);
+    return this.http.post<Educacion>(`${this.apiUrl}/new`, educacion, httpOptions);
+  }
+
+  //updateTaskReminder(task: Task): Observable<Task>{
+  //  const url = `${this.apiUrl}/${task.id}`;
+  //  return this.http.put<Task>(url, task, httpOptions)
+  //}
+  
 }

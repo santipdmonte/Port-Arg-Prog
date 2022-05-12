@@ -25,6 +25,13 @@ import { EducacionCardAddComponent } from './components/educacion/educacion-card
 import { ProyectosCardAddComponent } from './components/proyectos/proyectos-card-add/proyectos-card-add.component';
 import { ProyectosCardComponent } from './components/proyectos/proyectos-card/proyectos-card.component';
 import { ButtonEditDeleteComponent } from './components/button-edit-delete/button-edit-delete.component';
+import { MainComponent } from './components/main/main.component';
+
+import { RouterModule, Routes } from '@angular/router';
+
+const appRoutes: Routes = [
+  {path: '', component: MainComponent}
+]
 
 @NgModule({
   declarations: [
