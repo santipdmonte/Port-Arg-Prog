@@ -26,8 +26,8 @@ export class EducacionCardAddComponent implements OnInit {
   ngOnInit(): void {}
 
   onSubmit(){
-    if(this.descripcion_edu.length == 0){
-      alert('Por favor agregar un nombre a la educacion!');
+    if(this.descripcion_edu.length == 0 || this.institucion_edu.length == 0){
+      alert('Por favor completar los datos de la educacion!');
       return 
     }
     const {institucion_edu,descripcion_edu,personas_id_persona,url_foto_edu} = this

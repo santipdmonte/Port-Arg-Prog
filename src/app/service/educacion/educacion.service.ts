@@ -21,18 +21,16 @@ export class EducacionService {
   ) { }
 
   getEducacion(): Observable<Educacion[]> {
-    //const educacion = of()
     return this.http.get<Educacion[]>(`${this.apiUrl}/ver`)
   }
 
   deleteEducacion(id:number): Observable<any>{
     return this.http.delete(this.apiUrl + "/delete/" + id);
-
   }
 
   addEducacion(educacion: Educacion): Observable<Educacion>{
-    console.log(educacion);
-    return this.http.post<Educacion>(`${this.apiUrl}/new`, educacion, httpOptions);
+    //console.log(educacion);
+    return this.http.post<Educacion>(this.apiUrl + "/new", educacion, httpOptions);
   }
 
   //updateTaskReminder(task: Task): Observable<Task>{

@@ -27,22 +27,24 @@ export class EducacionComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.educacionService.getEducacion().subscribe((educacion) => {
-      this.educacion = educacion
-    })
+    this.educacionService.getEducacion().subscribe(
+      (educacion) => {
+        this.educacion = educacion
+    });
   }
 
-  
-  addEducacion(edu: Educacion){
-
-    console.log(edu) //
-
-    this.educacionService.addEducacion(edu).subscribe((edu: Educacion) => 
-      this.educacion.push(edu)
+  delete(edu: any){
+    this.educacionService.deleteEducacion(edu.id_educacion).subscribe(
+      ()=>(
+        this.educacion = this.educacion.filter( (e) => e.id_educacion !== edu.id_educacion)
+      )
     )
   }
 
-
-
-
+  addEducacion(edu: Educacion){
+    this.educacionService.addEducacion(edu).subscribe(
+      (educacion: Educacion) => this.educacion.push(edu)
+    )
+  }
+  
 }

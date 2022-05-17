@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
@@ -23,6 +23,7 @@ export class EducacionCardComponent implements OnInit {
   faTimes = faTimes
   
   @Input() edu: Educacion = {};
+  @Output() DeleteClick = new EventEmitter();
   
   constructor(
     private UiService: UiService,
@@ -35,12 +36,7 @@ export class EducacionCardComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  delete(educacion: any){
-    this.educacionService.deleteEducacion(educacion.id_educacion).subscribe((resp) => {
-      console.log(resp)
-      if (resp){
-        this.educacion.pop()
-      }
-    })
+  deleteClick(){
+    this.DeleteClick.emit()
   }
 }
