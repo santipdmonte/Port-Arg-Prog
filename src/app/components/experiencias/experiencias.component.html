@@ -6,19 +6,24 @@
             <button
                 class="btn btn-warning"               
                 *ngIf="showEditInterface"
-            >Agregar Experiencia</button>   <!--- *ngIf="showEditInterface" -->
+            > Agregar Experiencia</button>   <!--- *ngIf="showEditInterface" -->
         </div>
         
-
         <div class="cont-experiencias-cards">
 
-            <app-experiencia-card></app-experiencia-card>            <!--- ngFor-->
+            <app-experiencia-card
+                *ngFor="let expe of experiencia"
+                [expe]="expe"   
+                (DeleteClick)="delete(expe)"
+                (EditClick)="ToEdit(expe)"
+            ></app-experiencia-card>          
+
             <app-experiencia-card-add
                 *ngIf="showEditInterface"
-            ></app-experiencia-card-add>    <!--- ngIf-->
+                (onAddExperiencia)="addExperiencia($event)"   
+            ></app-experiencia-card-add>    <!---- [ngModel]="expe"     [toEditExpe]="toEditexpe"  ngIf-->
 
         </div>
-
 
     </section>               
 </section>

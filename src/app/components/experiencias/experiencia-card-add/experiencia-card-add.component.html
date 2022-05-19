@@ -1,17 +1,34 @@
-<div class="experiencia-content">
-    <img src="assets/img/pic04.jpg" class="img-personal" alt="" />
-    <form class="cont-form" action="">
+<div class="content">
+    <img src="assets/img/pic04.jpg" class="img" alt="" />
+    
+    <form class="cont_form" (ngSubmit)="onSubmit()">     <!--- *ngIf="showAddEdu"-->
 
-        <!--<input type="image">-->
-
-        <p>Ingresar experiencia</p>
+        <!-- <input type="image"> -->
+    
+        <p>Nombre experiencia</p>
+        <input 
+            class="title_input"
+            name="nombre_expe"
+            [(ngModel)]="nombre_expe"
+            type="text"
+            placeholder="Nombre de la experiencia"
+        > 
+    
+        <p>Descripcion experiencia</p>
         <textarea 
-            class="textaera-input" 
-            placeholder="Ingrese su experiencia..."
-            maxlength="323"
-            minlength="1">
+            class="textaera_input" 
+            name="descripcion_expe"
+            [(ngModel)]="descripcion_expe"
+            placeholder="Ingresar descripcion experiencia..."
+            maxlength="500"
+            minlength="1"> 
         </textarea>
-
-        <input class="btn btn-success" type="submit" value="Guardar experiencia">
+    
+        <input 
+            type="submit" 
+            value="Guardar experiencia" 
+            class="btn btn-success"
+        >
     </form>
 </div> 
+

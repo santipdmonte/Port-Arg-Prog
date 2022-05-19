@@ -1,11 +1,11 @@
 
-.educacion_content{
+.content{
     display:flex;
     align-items: center;
     gap: 30px;
 }
 
-.educacion_img{
+.img{
     width:130px;
     height:130px;
     border-radius: 50%;

@@ -28,7 +28,6 @@ export class EducacionComponent implements OnInit {
                             .subscribe(value => this.showEditInterface = value)
   }
 
-
   ngOnInit(): void {
     this.educacionService.getEducacion().subscribe(
       (educacion) => {

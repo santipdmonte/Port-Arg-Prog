@@ -6,11 +6,21 @@
     position: relative;  /* Para ajustar los botones*/
 }
 
+.desc-cont{
+    display:flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.titulo{
+    font-size:30px;
+}
+
 .desc{
     font-size:18px;
 }
 
-.personal-img{
+.img{
     width:160px;
     height:160px;
     border-radius: 50%;

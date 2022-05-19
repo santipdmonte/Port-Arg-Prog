@@ -1,41 +1,29 @@
 
+.content{
+    display:flex;
+    align-items: center;
+    gap: 30px;
+}
 
-.cont-form{
+.img{
+    width:160px;
+    height:160px;
+    border-radius: 50%;
+}
+
+.cont_form{
     display:flex;
     flex-direction:column;
     gap:10px;
     width: 80%;
 }
 
-.experiencias-content{
-    display:flex;
-    flex-direction:column;
-    gap: 20px;
-    justify-content:space-evenly;
-    padding-top:20px;
-    border-top: 2px solid rgba(156, 179, 255, 0.616);
-}
-
-.experiencia-content{
-    display:flex;
-    align-items: center;
-    gap: 30px;
-}
-
-.textaera-input{
+.textaera_input{
     height: 90px;
     resize: vertical;
 }
 
 .btn{
-    width: 40%;
-}
-
-/* --------- Style Imagen --------*/
-
-.img-personal{
-    width:160px;
-    height:160px;
-    border-radius: 50%;
+    width:40%;
 }
 
