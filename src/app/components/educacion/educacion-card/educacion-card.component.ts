@@ -24,6 +24,7 @@ export class EducacionCardComponent implements OnInit {
   
   @Input() edu: Educacion = {};
   @Output() DeleteClick = new EventEmitter();
+  @Output() EditClick = new EventEmitter();
   
   constructor(
     private UiService: UiService,
@@ -39,4 +40,9 @@ export class EducacionCardComponent implements OnInit {
   deleteClick(){
     this.DeleteClick.emit()
   }
+
+  editClick(){
+    this.EditClick.emit()
+  }
+
 }

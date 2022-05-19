@@ -15,12 +15,13 @@
                 *ngFor="let edu of educacion"
                 [edu]="edu"   
                 (DeleteClick)="delete(edu)"
-            ></app-educacion-card>                                 
+                (EditClick)="ToEdit(edu)"
+            ></app-educacion-card>                                
 
             <app-educacion-card-add
                 *ngIf="showEditInterface"
-                (onAddEducacion)="addEducacion($event)"
-            ></app-educacion-card-add>
+                (onAddEducacion)="addEducacion($event)"                              
+            ></app-educacion-card-add>    <!--- [ngModel]="edu"     [toEditEdu]="toEditEdu"-->
 
         </div>
         

@@ -1,8 +1,9 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { EducacionService } from '../../../service/educacion/educacion.service';
 import { Educacion } from '../../../Models/Educacion';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-educacion-card-add',
@@ -12,8 +13,11 @@ import { Educacion } from '../../../Models/Educacion';
 export class EducacionCardAddComponent implements OnInit {
 
   @Output() onAddEducacion: EventEmitter<Educacion> = new EventEmitter();
+  @Input() toEditEdu :Educacion = {};
   
-  institucion_edu: String = '';
+  
+  //educacionForm?: FormGroup ;
+  institucion_edu: String = '' ;
   descripcion_edu: String= '';
   url_foto_edu: String= 'src/img/argprog';
   personas_id_persona: number = 1;
@@ -23,10 +27,20 @@ export class EducacionCardAddComponent implements OnInit {
     public educacionService: EducacionService
   ) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+    //this.educacionForm = this.fb.group({
+    //  id_educacion: [''],
+    //  institucion_edu: [''] ,
+    //  descripcion_edu: [''],
+    //  url_foto_edu: ['src/img/argprog'],
+    //  personas_id_persona: [''],
+    //})
+
+  }
 
   onSubmit(){
-    if(this.descripcion_edu.length == 0 || this.institucion_edu.length == 0){
+    if(this.descripcion_edu.length == 0 || this.institucion_edu.length == 0 ){
       alert('Por favor completar los datos de la educacion!');
       return 
     }

@@ -14,6 +14,8 @@ const httpOptions = {
 })
 export class EducacionService {
 
+  private edu: Educacion = {};
+  
   private apiUrl = 'http://localhost:8080/educacion'
 
   constructor(
@@ -32,6 +34,11 @@ export class EducacionService {
     //console.log(educacion);
     return this.http.post<Educacion>(this.apiUrl + "/new", educacion, httpOptions);
   }
+
+  //editEducacion(educacion: Educacion,toEditId){
+    
+    //return this.http.post<Educacion>(this.apiUrl + "/new", educacion, httpOptions)
+  //}
 
   //updateTaskReminder(task: Task): Observable<Task>{
   //  const url = `${this.apiUrl}/${task.id}`;
