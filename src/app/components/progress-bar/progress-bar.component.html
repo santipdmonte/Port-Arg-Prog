@@ -1,7 +1,6 @@
 <div class="content">
     <circle-progress 
-      [title]="bar.title" 
-      [percent]="bar.progress"  
+      title={{hab.nombre_habilidad}}
       [space]="-10" 
       [radius]="100" 
       [outerStrokeWidth]="10"
@@ -9,13 +8,17 @@
       [outerStrokeColor]="'#4882c2'" 
       [innerStrokeColor]="'#e7e8ea'" 
       [animation]="true"
-      [animationDuration]="1000">
-    </circle-progress>
+      [animationDuration]="1000">   
+    </circle-progress>        <!--       [title]="hab.nombre_habilidad"   [percent]="hab.rango"    -->
 
-    <div 
-      class="cont-button"
-      *ngIf="showEditInterface">
-      <app-button-edit-delete></app-button-edit-delete>
+    <div class="cont-button">
+
+      <app-button-edit-delete
+        *ngIf="showEditInterface"
+        (onDeleteClick)="deleteClick()"
+        (onEditClick)="editClick()"
+      ></app-button-edit-delete>
+
     </div>
 
 </div>

@@ -1,14 +1,15 @@
 <div class="proyecto-content">
     <a href="#"><img class="proyectos-img" src="assets/img/pic04.jpg"/></a>     
     
-    <form class="cont_form" action="">
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">     <!--- *ngIf="showAddEdu"-->
 
         <!-- <input type="image"> -->
 
         <p>Nombre del proyecto</p>
         <input 
             class="title_input"
-            name="title_input"
+            name="nombre_proyecto"
+            [(ngModel)]="nombre_proyecto"
             type="text"
             placeholder="Nombre del proyecto..."
         >
@@ -16,16 +17,36 @@
         <p>Descripcion del proyecto</p>
         <textarea 
             class="textaera_input" 
+            name="descripcion_proyecto"
+            [(ngModel)]="descripcion_proyecto"
             placeholder="Descripcion del proyecto..."
-            maxlength="323"
+            maxlength="500"
             minlength="1">
         </textarea>
+
+        <p>Link proyecto</p>
+        <input 
+            class=""
+            name="url_proyecto"
+            [(ngModel)]="url_proyecto"
+            type="url"
+            placeholder="Link del proyecto..."
+        >
+
+        <p>Url foto proyecto</p>
+        <input 
+            class=""
+            name="url_foto_proyecto"
+            [(ngModel)]="url_foto_proyecto"
+            type="file"
+            accept=".png, .jpeg, .jpg"
+            placeholder="Foto proyecto..."
+        >
 
         <input 
             type="submit" 
             value="Guardar proyecto" 
             class="btn btn-success"
         >
-    </form>
-            
+    </form>            
 </div> 

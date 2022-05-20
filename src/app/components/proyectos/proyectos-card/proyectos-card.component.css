@@ -1,18 +1,18 @@
 
 
-.proyecto-content{
+.content{
     max-width: 450px;
     text-align:left;
     position: relative;  /* Para ajustar los botones*/
 }
 
-.proyectos-img{ 
+.img{ 
     max-width: 450px;  /* Adaptar imagenes altura y ancho*/
     height: 300px;
     width: 450px
 }
 
-.proyectos-desc{
+.desc{
     font-size:18px;
 }
 

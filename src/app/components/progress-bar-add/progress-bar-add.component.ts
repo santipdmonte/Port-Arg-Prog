@@ -1,6 +1,9 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Bar } from 'src/app/Models/bar';
-import { FormsModule } from '@angular/forms';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { HabilidadService } from '../../service/habilidad/habilidad.service';
+import { Habilidad } from '../../Models/Habilidad';
+import { empty } from 'rxjs';
 
 @Component({
   selector: 'app-progress-bar-add',
@@ -9,15 +12,32 @@ import { FormsModule } from '@angular/forms';
 })
 export class ProgressBarAddComponent implements OnInit {
 
-  habilidad_nombre: String = "";
-  habilidad_rango: Number = 0;
-  number: Number = 4
+  @Output() onAddHabilidad: EventEmitter<Habilidad> = new EventEmitter();
+  @Input() toEditHab :Habilidad = {};
 
-  @Input() bar: Bar = new Bar();
+  nombre_habilidad: String = "";
+  rango: number = 0;
+  personas_id_persona: number = 1;
   
-  constructor() { }
+
+  constructor(
+    public fb: FormBuilder,
+    public habilidadService: HabilidadService
+  ) { }
 
   ngOnInit(): void {
+  }
+
+  onSubmit(){
+    console.log("onSubmit")
+    if(this.nombre_habilidad.length == 0 || this.rango == 0 ){
+      alert('Por favor completar los datos de la habilidad!');
+      return 
+    }
+    const {nombre_habilidad,rango,personas_id_persona} = this
+    const newHabilidad = { nombre_habilidad,rango,personas_id_persona }
+
+    this.onAddHabilidad.emit(newHabilidad);
   }
 
 }

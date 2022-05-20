@@ -5,10 +5,20 @@
 
         <div class="cont-habilidades">                       
 
-            <app-progress-bars> </app-progress-bars>
+            <div class="content">
+                <app-progress-bar
+                    *ngFor="let hab of habilidad"
+                    [hab]="hab"  
+                    (DeleteClick)="delete(hab)"
+                    (EditClick)="ToEdit(hab)"
+                > </app-progress-bar>
+            </div>
+
+            
             <app-progress-bar-add
                 *ngIf="showEditInterface"
-            ></app-progress-bar-add>  <!--- ngIf -->
+                (onAddHabilidad)="addHabilidad($event)"
+            ></app-progress-bar-add>  <!--- ngIf     (onAddHabilidad)="addHabilidad($event)"-->
 
         </div>
 

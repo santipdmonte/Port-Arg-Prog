@@ -1,10 +1,11 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Bar } from 'src/app/Models/bar';
 import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 import { Subscription } from 'rxjs';
 import { UiService } from 'src/app/service/ui.service';
+import { Habilidad } from 'src/app/Models/Habilidad';
 
 
 @Component({
@@ -20,6 +21,18 @@ export class ProgressBarComponent implements OnInit {
   subscription?: Subscription;
 
   @Input() bar: Bar = new Bar();
+  @Input() hab: Habilidad = {};
+
+  //habil: Habilidad = {
+  //    id_habilidad: this.hab.id_habilidades,
+  //    nombre_habilidad: this.hab.nombre_habilidades,
+  //    descripcion_habilidades: this.hab.descripcion_habilidades,
+  //    rango: this.hab.rango,
+  //    personas_id_persona: 1
+  //};
+
+  @Output() DeleteClick = new EventEmitter();
+  @Output() EditClick = new EventEmitter();
 
   constructor(
     private UiService: UiService
@@ -29,6 +42,19 @@ export class ProgressBarComponent implements OnInit {
    }
 
   ngOnInit(): void {
+  }
+
+  deleteClick(){
+    console.log()
+    this.DeleteClick.emit()
+  }
+
+  editClick(){
+    this.EditClick.emit()
+  }
+
+  toString(num: number){
+    return num.toString()
   }
 
 }

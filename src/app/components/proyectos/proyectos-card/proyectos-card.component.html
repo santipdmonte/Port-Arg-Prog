@@ -1,15 +1,19 @@
-<div class="proyecto-content">
+<div class="content">
     
-    <a href="https://civetrosario.com/" target="_blank"><img class="proyectos-img" src="assets/img/civet-web.png"/></a>               
+    <a href="{{proy.url_proyecto}}" target="_blank"><img class="img" src="{{proy.url_foto_proy}}"/></a>               
     
-    <h3 class="proyectos-descs">CIVet Rosario - Pagina web informativa</h3>  
+    <h3 class="desc">{{proy.nombre_proyecto}}</h3>  
     
-    <p class="proyectos-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aliquid quod maxime totam, provident quae possimus.</p>             
+    <p class="desc">{{proy.descripcion_proyecto}}</p>             
 
-    <div 
-        class="cont-button"
-        *ngIf="showEditInterface">
-        <app-button-edit-delete></app-button-edit-delete>
-    </div>
+    <div class="cont-button">  
+        
+        <app-button-edit-delete
+            *ngIf="showEditInterface"
+            (onDeleteClick)="deleteClick()"
+            (onEditClick)="editClick(proy)"
+        ></app-button-edit-delete>  
+                  
+        </div>
 
 </div>   

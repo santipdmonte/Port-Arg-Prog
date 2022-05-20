@@ -43,7 +43,6 @@ export class ExperienciasComponent implements OnInit {
     )
   }
 
-
   @Output() toEdit: Experiencia = {};
   
   ToEdit(expe: any){
