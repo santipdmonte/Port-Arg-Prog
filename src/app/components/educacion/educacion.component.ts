@@ -47,6 +47,7 @@ export class EducacionComponent implements OnInit {
   @Output() toEdit: Educacion = {};
   
   ToEdit(edu: any){
+    console.log(edu)
   this.toEdit = edu;
   //this.educacionService.editEducacion(edu).subscribe(
   //   (educacion: Educacion) => this.educacion.push(edu)

@@ -1,6 +1,8 @@
 <div class="content">
     <circle-progress 
         title="{{nombre_habilidad}}"
+        [percent]="rango || 0"
+        [subtitle]="toString(rango) "
         class="circle"       
         [space]="-10" 
         [radius]="100" 
@@ -34,6 +36,7 @@
                 step="5"
                 [(ngModel)]="rango"
             >  
+            {{rango}}
         </div>
         
         

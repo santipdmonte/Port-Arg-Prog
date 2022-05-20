@@ -53,8 +53,8 @@ export class ProgressBarComponent implements OnInit {
     this.EditClick.emit()
   }
 
-  toString(num: number){
-    return num.toString()
+  toString(num:number){
+    return num.toString()+"%"
   }
 
 }

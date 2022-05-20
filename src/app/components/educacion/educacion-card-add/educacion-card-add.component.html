@@ -1,7 +1,7 @@
 <div class="content">
     <img src="assets/img/pic04.jpg" class="img" alt="" />
     
-    <form class="cont_form" (ngSubmit)="onSubmit()">     <!--- *ngIf="showAddEdu"-->
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">     <!--- *ngIf="showAddEdu"-->
 
         <!-- <input type="image"> -->
 
@@ -23,6 +23,15 @@
             maxlength="500"
             minlength="1"> 
         </textarea>
+
+        <p>Foto educacion</p>
+        <input 
+            class=""
+            name="url_foto_edu"
+            [(ngModel)]="url_foto_edu"
+            type="file"
+            accept=".jpg, .png, .jepg"
+        >
 
         <input 
             type="submit" 

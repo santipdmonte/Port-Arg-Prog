@@ -40,4 +40,8 @@ export class ProgressBarAddComponent implements OnInit {
     this.onAddHabilidad.emit(newHabilidad);
   }
 
+  toString(num:number){
+    return num.toString()+"%"
+  }
+
 }

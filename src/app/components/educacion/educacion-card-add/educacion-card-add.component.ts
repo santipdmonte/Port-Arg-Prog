@@ -19,7 +19,7 @@ export class EducacionCardAddComponent implements OnInit {
   //educacionForm?: FormGroup ;
   institucion_edu: String = '' ;
   descripcion_edu: String= '';
-  url_foto_edu: String= 'src/img/argprog';
+  url_foto_edu: String= 'pic04.jpg';
   personas_id_persona: number = 1;
 
   constructor(
@@ -44,6 +44,7 @@ export class EducacionCardAddComponent implements OnInit {
       alert('Por favor completar los datos de la educacion!');
       return 
     }
+    this.url_foto_edu = ("assets/img/"+this.url_foto_edu.replace("C:\\fakepath\\",""));
     const {institucion_edu,descripcion_edu,personas_id_persona,url_foto_edu} = this
     const newEducacion = { institucion_edu,descripcion_edu,personas_id_persona,url_foto_edu }
 

@@ -18,7 +18,7 @@ export class ExperienciaCardAddComponent implements OnInit {
     //educacionForm?: FormGroup ;
     nombre_expe: String = '' ;
     descripcion_expe: String= '';
-    url_foto_expe: String= 'src/img/argprog';
+    url_foto_expe: String= 'pic04.jpg';
     personas_id_persona: number = 1;
   
     constructor(
@@ -43,6 +43,7 @@ export class ExperienciaCardAddComponent implements OnInit {
         alert('Por favor completar los datos de la experiencia!');
         return 
       }
+      this.url_foto_expe = ("assets/img/"+this.url_foto_expe.replace("C:\\fakepath\\",""));
       const {nombre_expe,descripcion_expe,personas_id_persona,url_foto_expe} = this
       const newExperiencia = { nombre_expe,descripcion_expe,personas_id_persona,url_foto_expe }
   

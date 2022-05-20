@@ -1,6 +1,8 @@
 <div class="content">
     <circle-progress 
       title={{hab.nombre_habilidad}}
+      [percent]="hab.rango || 0"
+      [subtitle]="toString(hab.rango || 0) "
       [space]="-10" 
       [radius]="100" 
       [outerStrokeWidth]="10"
@@ -9,7 +11,7 @@
       [innerStrokeColor]="'#e7e8ea'" 
       [animation]="true"
       [animationDuration]="1000">   
-    </circle-progress>        <!--       [title]="hab.nombre_habilidad"   [percent]="hab.rango"    -->
+    </circle-progress>        <!--       toString(hab.rango)    -->
 
     <div class="cont-button">
 
