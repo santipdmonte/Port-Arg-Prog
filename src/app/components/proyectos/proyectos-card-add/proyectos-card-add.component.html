@@ -1,5 +1,5 @@
 <div class="proyecto-content">
-    <a href="#"><img class="proyectos-img" src="assets/img/pic04.jpg"/></a>     
+    <a href="#"><img class="proyectos-img" src="{{url_foto_proyecto}}"/></a>     
     
     <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">     <!--- *ngIf="showAddEdu"-->
 
@@ -33,13 +33,12 @@
             placeholder="Link del proyecto..."
         >
 
-        <p>Url foto proyecto</p>
+        <p>Url foto proyecto (assets/img/...)</p>
         <input 
             class=""
             name="url_foto_proyecto"
             [(ngModel)]="url_foto_proyecto"
-            type="file"
-            accept=".png, .jpeg, .jpg"
+            type="text"
             placeholder="Foto proyecto..."
         >
 

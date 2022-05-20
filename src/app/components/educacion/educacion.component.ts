@@ -60,6 +60,7 @@ export class EducacionComponent implements OnInit {
   //}
 
   addEducacion(edu: Educacion){
+    console.log(edu)
     this.educacionService.addEducacion(edu).subscribe(
       (educacion: Educacion) => this.educacion.push(edu)
     )

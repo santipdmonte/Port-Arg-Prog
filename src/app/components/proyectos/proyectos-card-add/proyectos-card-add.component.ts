@@ -18,7 +18,7 @@ export class ProyectosCardAddComponent implements OnInit {
     //educacionForm?: FormGroup ;
     nombre_proyecto: String = '' ;
     descripcion_proyecto: String= '';
-    url_foto_proyecto: String= 'src/img/argprog';
+    url_foto_proyecto: String= 'assets/img/civet-web.png';
     url_proyecto: String= '';
     personas_id_persona: number = 1;
   
@@ -35,12 +35,10 @@ export class ProyectosCardAddComponent implements OnInit {
         alert('Por favor completar los datos de la experiencia!');
         return 
       }
-      this.url_foto_proyecto = ("assets/img/"+this.url_foto_proyecto);
+      //this.url_foto_proyecto = ("assets/img/"+this.url_foto_proyecto.replace("C:\\fakepath\\",""));
       var {nombre_proyecto, descripcion_proyecto, url_foto_proyecto,url_proyecto, personas_id_persona} = this
       var newProyecto = {nombre_proyecto, descripcion_proyecto, url_foto_proyecto,url_proyecto, personas_id_persona}
       
-  
-      console.log(newProyecto)
       this.onAddProyecto.emit(newProyecto);
     }
 

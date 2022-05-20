@@ -31,7 +31,7 @@ export class EducacionService {
   }
 
   addEducacion(educacion: Educacion): Observable<Educacion>{
-    //console.log(educacion);
+    console.log(educacion);
     return this.http.post<Educacion>(this.apiUrl + "/new", educacion, httpOptions);
   }
 
