@@ -6,14 +6,15 @@ import { Educacion } from '../../../Models/Educacion';
 import { empty, Observable } from 'rxjs';
 
 @Component({
-  selector: 'app-educacion-card-add',
-  templateUrl: './educacion-card-add.component.html',
-  styleUrls: ['./educacion-card-add.component.css']
+  selector: 'app-educacion-card-edit',
+  templateUrl: './educacion-card-edit.component.html',
+  styleUrls: ['./educacion-card-edit.component.css']
 })
-export class EducacionCardAddComponent implements OnInit {
+export class EducacionCardEditComponent implements OnInit {
 
   @Output() onAddEducacion: EventEmitter<Educacion> = new EventEmitter();
-  eventsSubscription: any;
+
+  @Input() edu :Educacion = {};
   
   public educacionForm = new FormGroup({
     id_educacion: new FormControl (''),
@@ -31,14 +32,12 @@ export class EducacionCardAddComponent implements OnInit {
   ngOnInit(): void {
 
     this.educacionForm = this.fb.group({
-      id_educacion: [''] ,
-      institucion_edu: ['',Validators.required] ,
-      descripcion_edu: ['',Validators.required],
-      url_foto_edu: ['assets/img/pic04.jpg'],
-      personas_id_persona: ['1'],
+      id_educacion: [this.edu.id_educacion,[]] ,
+      institucion_edu: [this.edu.institucion_edu,Validators.required] ,
+      descripcion_edu: [this.edu.descripcion_edu,Validators.required],
+      url_foto_edu: [this.edu.url_foto_edu],
+      personas_id_persona: [this.edu.personas_id_persona],
     })
-
-    //this.eventsSubscription = this.valueEdit.subscribe(() => this.valueEdit())
   }
 
   

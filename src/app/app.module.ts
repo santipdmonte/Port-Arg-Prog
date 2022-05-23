@@ -28,6 +28,7 @@ import { ButtonEditDeleteComponent } from './components/button-edit-delete/butto
 import { MainComponent } from './components/main/main.component';
 
 import { RouterModule, Routes } from '@angular/router';
+import { EducacionCardEditComponent } from './components/educacion/educacion-card-edit/educacion-card-edit.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent}
@@ -52,7 +53,8 @@ const appRoutes: Routes = [
     EducacionCardAddComponent,
     ProyectosCardAddComponent,
     ProyectosCardComponent,
-    ButtonEditDeleteComponent
+    ButtonEditDeleteComponent,
+    EducacionCardEditComponent
   ],
   imports: [
     BrowserModule,

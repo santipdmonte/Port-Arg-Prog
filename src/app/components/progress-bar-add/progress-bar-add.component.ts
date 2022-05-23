@@ -15,6 +15,7 @@ export class ProgressBarAddComponent implements OnInit {
   @Output() onAddHabilidad: EventEmitter<Habilidad> = new EventEmitter();
   @Input() toEditHab :Habilidad = {};
 
+  id_habilidades: number = 0;
   nombre_habilidad: String = "";
   rango: number = 0;
   personas_id_persona: number = 1;
@@ -34,8 +35,8 @@ export class ProgressBarAddComponent implements OnInit {
       alert('Por favor completar los datos de la habilidad!');
       return 
     }
-    const {nombre_habilidad,rango,personas_id_persona} = this
-    const newHabilidad = { nombre_habilidad,rango,personas_id_persona }
+    const {id_habilidades,nombre_habilidad,rango,personas_id_persona} = this
+    const newHabilidad = { id_habilidades,nombre_habilidad,rango,personas_id_persona }
 
     this.onAddHabilidad.emit(newHabilidad);
   }

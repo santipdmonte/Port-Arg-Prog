@@ -46,13 +46,13 @@ export class HabilidadesComponent implements OnInit {
   @Output() toEdit: Habilidad = {};
   
   ToEdit(hab: any){
+    console.log(hab)
   this.toEdit = hab;
   }
 
   addHabilidad(hab: Habilidad){
-    console.log(hab)
     this.habilidadService.add(hab).subscribe(
-      (habilidad: Habilidad) => this.habilidad.push(hab)
+      (habilidad: Habilidad) => this.habilidad.push(habilidad)
     )
   }
 

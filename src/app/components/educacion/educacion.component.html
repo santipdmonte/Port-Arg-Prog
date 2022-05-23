@@ -6,7 +6,8 @@
             <button
                 class="btn btn-warning"               
                 *ngIf="showEditInterface"
-            > Agregar Educación </button>                                            <!--- *ngIf="showEditInterface" -->
+                (click)="interfaceAdd()"
+            > Agregar Educación </button>         <!--- *ngIf="showEditInterface" -->
         </div>
 
         <div class="educaciones-content">               
@@ -18,10 +19,16 @@
                 (EditClick)="ToEdit(edu)"
             ></app-educacion-card>                                
 
-            <app-educacion-card-add
-                *ngIf="showEditInterface"
-                (onAddEducacion)="addEducacion($event)"                              
-            ></app-educacion-card-add>    <!--- [ngModel]="edu"     [toEditEdu]="toEditEdu"-->
+            <app-educacion-card-add               
+                *ngIf="interfaceCardAdd"
+                (onAddEducacion)="addEducacion($event)"
+            ></app-educacion-card-add>    <!---   [ngModel]="edu"  *ngIf="showEditInterface"   [valueEdit]="toEditEdu" [toEditEdu]="onEdit"  -->
+
+            <app-educacion-card-edit
+                *ngIf="interfaceCardEdit"
+                (onAddEducacion)="addEducacion($event)"
+                [edu]="onEdit"
+            ></app-educacion-card-edit>
 
         </div>
         

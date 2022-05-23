@@ -17,8 +17,11 @@ export class EducacionComponent implements OnInit {
 
   showEditInterface: boolean = true;
   subscription?: Subscription;
+
   educacion: Educacion[] = [];
   editEducacion: Educacion = {};
+
+  onEdit: Educacion = {};
 
   constructor(
     private UiService: UiService,
@@ -35,36 +38,39 @@ export class EducacionComponent implements OnInit {
     });
   }
 
-  delete(edu: any){
-    this.educacionService.deleteEducacion(edu.id_educacion).subscribe(
+  delete(edu: Educacion){
+    console.log(edu.id_educacion);
+    this.educacionService.deleteEducacion(edu).subscribe(
       ()=>(
         this.educacion = this.educacion.filter( (e) => e.id_educacion !== edu.id_educacion)
       )
     )
   }
 
-
-  @Output() toEdit: Educacion = {};
+  public toEditEdu = new EventEmitter();
   
-  ToEdit(edu: any){
+  ToEdit(edu: Educacion){
     console.log(edu)
-  this.toEdit = edu;
-  //this.educacionService.editEducacion(edu).subscribe(
-  //   (educacion: Educacion) => this.educacion.push(edu)
-  //)
+    this.onEdit = edu;
+    this.toEditEdu.emit()
+    this.interfaceCardEdit = !this.interfaceCardEdit
   }
-
-  //Edit(toEdit:any , edu: Educacion){
-  //  this.editEducacion = edu
-  //  this.editEducacion.id_educacion = toEdit.id_educacion
-  //  console.log(this.editEducacion)
-  //}
 
   addEducacion(edu: Educacion){
     console.log(edu)
+    console.log('guardado en edu')
     this.educacionService.addEducacion(edu).subscribe(
-      (educacion: Educacion) => this.educacion.push(edu)
+      (educacion: Educacion) => this.educacion.push(educacion)
     )
+  }
+
+  //-------- Interfaces ----------
+
+  interfaceCardEdit: boolean = false;
+  interfaceCardAdd: boolean = false;
+
+  interfaceAdd(){
+    this.interfaceCardAdd = !this.interfaceCardAdd
   }
   
 }

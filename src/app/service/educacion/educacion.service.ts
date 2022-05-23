@@ -26,12 +26,11 @@ export class EducacionService {
     return this.http.get<Educacion[]>(`${this.apiUrl}/ver`)
   }
 
-  deleteEducacion(id:number): Observable<any>{
-    return this.http.delete(this.apiUrl + "/delete/" + id);
+  deleteEducacion(edu: Educacion): Observable<any>{
+    return this.http.delete(this.apiUrl + "/delete/" + edu.id_educacion);
   }
 
   addEducacion(educacion: Educacion): Observable<Educacion>{
-    console.log(educacion);
     return this.http.post<Educacion>(this.apiUrl + "/new", educacion, httpOptions);
   }
 

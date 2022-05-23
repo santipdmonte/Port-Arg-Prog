@@ -32,5 +32,6 @@ export class HabilidadService {
 
   add(habilidad: Habilidad): Observable<Habilidad>{
     return this.http.post<Habilidad>(this.apiUrl + "/new", habilidad, httpOptions);
+    
   }
 }
