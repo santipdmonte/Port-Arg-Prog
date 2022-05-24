@@ -22,12 +22,14 @@
             <app-educacion-card-add               
                 *ngIf="interfaceCardAdd"
                 (onAddEducacion)="addEducacion($event)"
+                (cancel)="interfaceAdd()"
             ></app-educacion-card-add>    <!---   [ngModel]="edu"  *ngIf="showEditInterface"   [valueEdit]="toEditEdu" [toEditEdu]="onEdit"  -->
 
             <app-educacion-card-edit
                 *ngIf="interfaceCardEdit"
                 (onAddEducacion)="addEducacion($event)"
                 [edu]="onEdit"
+                (cancel)="interfaceEdit()"
             ></app-educacion-card-edit>
 
         </div>

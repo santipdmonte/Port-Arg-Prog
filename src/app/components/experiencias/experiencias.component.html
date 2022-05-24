@@ -6,6 +6,7 @@
             <button
                 class="btn btn-warning"               
                 *ngIf="showEditInterface"
+                (click)="interfaceAdd()"
             > Agregar Experiencia</button>   <!--- *ngIf="showEditInterface" -->
         </div>
         
@@ -19,7 +20,7 @@
             ></app-experiencia-card>          
 
             <app-experiencia-card-add
-                *ngIf="showEditInterface"
+                *ngIf="interfaceCardAdd"
                 (onAddExperiencia)="addExperiencia($event)"   
             ></app-experiencia-card-add>    <!---- [ngModel]="expe"     [toEditExpe]="toEditexpe"  ngIf-->
 

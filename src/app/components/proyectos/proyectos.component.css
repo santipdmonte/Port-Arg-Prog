@@ -10,6 +10,11 @@
     padding: 40px 0;
 }
 
+.container-titulo{
+    display:flex;
+    justify-content:space-between;
+}
+
 .proyectos-content{
     display:flex;
     gap: 20px;

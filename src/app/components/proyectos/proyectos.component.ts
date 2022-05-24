@@ -52,8 +52,17 @@ export class ProyectosComponent implements OnInit {
 
   addProyecto(proy: Proyecto){
     this.proyectoService.add(proy).subscribe(
-      (proyecto: Proyecto) => this.proyecto.push(proy)
+      (proyecto: Proyecto) => this.proyecto.push(proyecto)
     )
   }
+
+    //-------- Interfaces ----------
+
+    interfaceCardEdit: boolean = false;
+    interfaceCardAdd: boolean = false;
+  
+    interfaceAdd(){
+      this.interfaceCardAdd = !this.interfaceCardAdd
+    }
 
 }

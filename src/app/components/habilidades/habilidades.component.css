@@ -10,6 +10,11 @@
     padding: 40px 0;
 }
 
+.container-titulo{
+    display:flex;
+    justify-content:space-between;
+}
+
 .cont-habilidades{
     padding-top:20px;
     border-top: 2px solid rgba(59, 84, 165, 0.274);

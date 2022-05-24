@@ -21,8 +21,6 @@ export class EducacionComponent implements OnInit {
   educacion: Educacion[] = [];
   editEducacion: Educacion = {};
 
-  onEdit: Educacion = {};
-
   constructor(
     private UiService: UiService,
     private educacionService: EducacionService
@@ -48,13 +46,19 @@ export class EducacionComponent implements OnInit {
   }
 
   public toEditEdu = new EventEmitter();
+
+
+
+  onEdit: Educacion = {};
+  oldEdit: Educacion = {};
   
   ToEdit(edu: Educacion){
-    console.log(edu)
-    this.onEdit = edu;
     this.toEditEdu.emit()
-    this.interfaceCardEdit = !this.interfaceCardEdit
+    this.onEdit = edu;
+    this.interfaceEdit();
   }
+
+
 
   addEducacion(edu: Educacion){
     console.log(edu)
@@ -71,6 +75,16 @@ export class EducacionComponent implements OnInit {
 
   interfaceAdd(){
     this.interfaceCardAdd = !this.interfaceCardAdd
+    if (this.interfaceCardEdit){
+      this.interfaceCardEdit = !this.interfaceCardEdit
+    }
+  }
+
+  interfaceEdit(){
+    this.interfaceCardEdit = !this.interfaceCardEdit
+    if (this.interfaceCardAdd){
+      this.interfaceCardAdd = !this.interfaceCardAdd
+    }
   }
   
 }

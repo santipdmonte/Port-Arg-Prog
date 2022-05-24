@@ -43,12 +43,14 @@ export class EducacionCardEditComponent implements OnInit {
   
   onSubmit(){
     this.onAddEducacion.emit(this.educacionForm.value);
+  }
 
-    //this.educacionForm.reset();
-    //this.educacionForm.setValue({
-    //  personas_id_persona: ['1'],
-    //  url_foto_edu: ['assets/img/pic04.jpg']
-    //});
+  @Output() cancel: EventEmitter<any> = new EventEmitter();
+
+  
+
+  cancelClick(){
+    this.cancel.emit();
   }
 
 }

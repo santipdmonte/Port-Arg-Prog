@@ -51,8 +51,17 @@ export class ExperienciasComponent implements OnInit {
 
   addExperiencia(expe: Experiencia){
     this.experienciaService.add(expe).subscribe(
-      (experiencia: Experiencia) => this.experiencia.push(expe)
+      (experiencia: Experiencia) => this.experiencia.push(experiencia)
     )
   }
+
+    //-------- Interfaces ----------
+
+    interfaceCardEdit: boolean = false;
+    interfaceCardAdd: boolean = false;
+  
+    interfaceAdd(){
+      this.interfaceCardAdd = !this.interfaceCardAdd
+    }
 
 }

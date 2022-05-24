@@ -12,8 +12,9 @@ import { empty, Observable } from 'rxjs';
 })
 export class EducacionCardAddComponent implements OnInit {
 
+
+
   @Output() onAddEducacion: EventEmitter<Educacion> = new EventEmitter();
-  eventsSubscription: any;
   
   public educacionForm = new FormGroup({
     id_educacion: new FormControl (''),
@@ -22,6 +23,8 @@ export class EducacionCardAddComponent implements OnInit {
     url_foto_edu: new FormControl (''),
     personas_id_persona: new FormControl ('1'),
   });
+
+
 
   constructor(
     public fb: FormBuilder,
@@ -38,18 +41,19 @@ export class EducacionCardAddComponent implements OnInit {
       personas_id_persona: ['1'],
     })
 
-    //this.eventsSubscription = this.valueEdit.subscribe(() => this.valueEdit())
   }
 
   
   onSubmit(){
     this.onAddEducacion.emit(this.educacionForm.value);
+  }
 
-    //this.educacionForm.reset();
-    //this.educacionForm.setValue({
-    //  personas_id_persona: ['1'],
-    //  url_foto_edu: ['assets/img/pic04.jpg']
-    //});
+
+
+  @Output() cancel: EventEmitter<any> = new EventEmitter();
+
+  cancelClick(){
+    this.cancel.emit();
   }
 
 }

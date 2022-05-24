@@ -56,4 +56,13 @@ export class HabilidadesComponent implements OnInit {
     )
   }
 
+    //-------- Interfaces ----------
+
+    interfaceCardEdit: boolean = false;
+    interfaceCardAdd: boolean = false;
+  
+    interfaceAdd(){
+      this.interfaceCardAdd = !this.interfaceCardAdd
+    }
+
 }

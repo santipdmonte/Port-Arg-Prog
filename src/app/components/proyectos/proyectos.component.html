@@ -1,7 +1,16 @@
 <section id="wrapper">
     <section class="wrapper spotlight style1">
 
-        <h2 class="titulo proyectos-titulo">Proyectos</h2>
+        <div class="container-titulo">
+        
+            <button
+                class="btn btn-warning"               
+                *ngIf="showEditInterface"
+                (click)="interfaceAdd()"
+            >Agregar proyecto</button>    
+            
+            <h2 class="titulo proyectos-titulo">Proyectos</h2>
+        </div>
 
         <div class="proyectos-content">
             
@@ -10,14 +19,14 @@
                 [proy]="proy"   
                 (DeleteClick)="delete(proy)"
                 (EditClick)="ToEdit(proy)"
-            ></app-proyectos-card> <!-- ngFor-->
+            ></app-proyectos-card> 
             
         </div>
 
         <app-proyectos-card-add
-            *ngIf="showEditInterface"
+            *ngIf="interfaceCardAdd"
             (onAddProyecto)="addProyecto($event)"  
-        ></app-proyectos-card-add> <!--- ngIf -->           
+        ></app-proyectos-card-add>        
 
     </section>               
 </section>

@@ -39,12 +39,22 @@
             accept=".jpg, .png, .jepg"
         >   <!-- [(ngModel)]="url_foto_edu"  -->
  
-        <input 
+        
+
+        <div class="btn-container">
+            <input 
             type="submit" 
             value="Guardar edicion de educación" 
             class="btn btn-success"
             [disabled]="!educacionForm.valid"
-        >
+            >
+
+            <button
+                class="btn btn-danger"               
+                (click)="cancelClick()"
+            >Cancelar </button>
+        </div>
+
     </form>
     
 </div> 

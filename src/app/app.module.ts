@@ -29,6 +29,9 @@ import { MainComponent } from './components/main/main.component';
 
 import { RouterModule, Routes } from '@angular/router';
 import { EducacionCardEditComponent } from './components/educacion/educacion-card-edit/educacion-card-edit.component';
+import { HabilidadesCardEditComponent } from './components/habilidades/habilidades-card-edit/habilidades-card-edit.component';
+import { ExperienciasCardEditComponent } from './components/experiencias/experiencias-card-edit/experiencias-card-edit.component';
+import { ProyectosCardEditComponent } from './components/proyectos/proyectos-card-edit/proyectos-card-edit.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent}
@@ -54,7 +57,10 @@ const appRoutes: Routes = [
     ProyectosCardAddComponent,
     ProyectosCardComponent,
     ButtonEditDeleteComponent,
-    EducacionCardEditComponent
+    EducacionCardEditComponent,
+    HabilidadesCardEditComponent,
+    ExperienciasCardEditComponent,
+    ProyectosCardEditComponent
   ],
   imports: [
     BrowserModule,
