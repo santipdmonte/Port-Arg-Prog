@@ -1,1 +1,52 @@
-<p>experiencias-card-edit works!</p>
+<div class="content">
+    <img src="assets/img/pic04.jpg" class="img" alt="" /> 
+    
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="experienciaForm">     <!--- *ngIf="showAddEdu"-->
+
+        <!-- <input type="image"> -->
+    
+        <p>Nombre experiencia</p>
+        <input 
+            class="title_input"
+            name="nombre_expe"
+            formControlName="nombre_expe"
+            type="text"
+            placeholder="Nombre de la experiencia"
+        > 
+    
+        <p>Descripcion experiencia</p>
+        <textarea 
+            class="textaera_input" 
+            name="descripcion_expe"
+            formControlName="descripcion_expe"
+            placeholder="Ingresar descripcion experiencia..."
+            maxlength="500"
+            minlength="1"> 
+        </textarea>
+
+        <p>Foto experiencia</p>
+        <input 
+            class=""
+            name="url_foto_expe"
+            formControlName="url_foto_expe"
+            type="file"
+            accept=".jpg, .png, .jepg"
+        >
+
+        
+
+        <div class="btn-container">
+            <input 
+            type="submit" 
+            value="Guardar cambios" 
+            class="btn btn-success"
+            [disabled]="!experienciaForm.valid"
+            >
+
+            <button
+                class="btn btn-danger"               
+                (click)="cancelClick()"
+            >Cancelar </button>
+        </div>
+    </form>
+</div> 

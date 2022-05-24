@@ -43,12 +43,18 @@ export class HabilidadesComponent implements OnInit {
     )
   }
 
-  @Output() toEdit: Habilidad = {};
+  public toEditEdu = new EventEmitter();
+
+  onEdit: Habilidad = {};
+
   
-  ToEdit(hab: any){
-    console.log(hab)
-  this.toEdit = hab;
+  ToEdit(hab: Habilidad){
+    this.toEditEdu.emit()
+    this.onEdit = hab;
+    this.interfaceEdit();
   }
+
+  
 
   addHabilidad(hab: Habilidad){
     this.habilidadService.add(hab).subscribe(
@@ -56,13 +62,23 @@ export class HabilidadesComponent implements OnInit {
     )
   }
 
-    //-------- Interfaces ----------
+  //-------- Interfaces ----------
 
-    interfaceCardEdit: boolean = false;
-    interfaceCardAdd: boolean = false;
+  interfaceCardEdit: boolean = false;
+  interfaceCardAdd: boolean = false;
   
-    interfaceAdd(){
+  interfaceAdd(){
+    this.interfaceCardAdd = !this.interfaceCardAdd
+    if (this.interfaceCardEdit){
+      this.interfaceCardEdit = !this.interfaceCardEdit
+    }
+  }
+
+  interfaceEdit(){
+    this.interfaceCardEdit = !this.interfaceCardEdit
+    if (this.interfaceCardAdd){
       this.interfaceCardAdd = !this.interfaceCardAdd
     }
+  }
 
 }

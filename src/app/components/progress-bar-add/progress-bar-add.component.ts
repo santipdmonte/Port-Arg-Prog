@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { HabilidadService } from '../../service/habilidad/habilidad.service';
 import { Habilidad } from '../../Models/Habilidad';
 import { empty } from 'rxjs';
@@ -12,14 +12,18 @@ import { empty } from 'rxjs';
 })
 export class ProgressBarAddComponent implements OnInit {
 
+
+
+
   @Output() onAddHabilidad: EventEmitter<Habilidad> = new EventEmitter();
   @Input() toEditHab :Habilidad = {};
-
-  id_habilidades: number = 0;
-  nombre_habilidad: String = "";
-  rango: number = 0;
-  personas_id_persona: number = 1;
   
+  public habilidadForm = new FormGroup({
+    id_habilidades: new FormControl (''),
+    nombre_habilidad: new FormControl ('') ,
+    rango: new FormControl (0),
+    personas_id_persona: new FormControl ('1'),
+  });
 
   constructor(
     public fb: FormBuilder,
@@ -27,20 +31,27 @@ export class ProgressBarAddComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+
+    this.habilidadForm = this.fb.group({
+      id_habilidades: [''] ,
+      nombre_habilidad: ['',Validators.required] ,
+      rango: [0,Validators.required],
+      personas_id_persona: ['1'],
+    })
+
   }
 
   onSubmit(){
-    console.log("onSubmit")
-    if(this.nombre_habilidad.length == 0 || this.rango == 0 ){
-      alert('Por favor completar los datos de la habilidad!');
-      return 
-    }
-    const {id_habilidades,nombre_habilidad,rango,personas_id_persona} = this
-    const newHabilidad = { id_habilidades,nombre_habilidad,rango,personas_id_persona }
-
-    this.onAddHabilidad.emit(newHabilidad);
+    this.onAddHabilidad.emit(this.habilidadForm.value);
+    this.cancel.emit();
   }
 
+  @Output() cancel: EventEmitter<any> = new EventEmitter();
+
+  cancelClick(){
+    this.cancel.emit();
+  }
+  
   toString(num:number){
     return num.toString()+"%"
   }

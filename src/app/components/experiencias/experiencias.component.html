@@ -21,8 +21,16 @@
 
             <app-experiencia-card-add
                 *ngIf="interfaceCardAdd"
-                (onAddExperiencia)="addExperiencia($event)"   
+                (onAddExperiencia)="addExperiencia($event)" 
+                (cancel)="interfaceAdd()"  
             ></app-experiencia-card-add>    <!---- [ngModel]="expe"     [toEditExpe]="toEditexpe"  ngIf-->
+
+            <app-experiencias-card-edit
+                *ngIf="interfaceCardEdit"
+                (onAddExperiencia)="addExperiencia($event)"
+                [expe]="onEdit"
+                (cancel)="interfaceEdit()"
+            ></app-experiencias-card-edit>
 
         </div>
 

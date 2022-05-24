@@ -2,14 +2,14 @@
     <section id="one" class="wrapper spotlight style1">
 
         <div class="container-titulo">
+
+            <h2 class="titulo habilidades-titulo">Habilidades</h2>
         
             <button
                 class="btn btn-warning"               
                 *ngIf="showEditInterface"
                 (click)="interfaceAdd()"
-            > Agregar Educación </button>    
-            
-            <h2 class="titulo habilidades-titulo">Habilidades</h2>
+            > Agregar Educación </button>               
 
         </div>
         
@@ -24,12 +24,19 @@
                     (EditClick)="ToEdit(hab)"
                 > </app-progress-bar>
             </div>
-
-            
+           
             <app-progress-bar-add
                 *ngIf="interfaceCardAdd"
                 (onAddHabilidad)="addHabilidad($event)"
+                (cancel)="interfaceAdd()"
             ></app-progress-bar-add>  <!--- ngIf     (onAddHabilidad)="addHabilidad($event)"-->
+
+            <app-habilidades-card-edit
+                *ngIf="interfaceCardEdit"
+                (onAddHabilidad)="addHabilidad($event)"
+                [hab]="onEdit"
+                (cancel)="interfaceEdit()"
+            ></app-habilidades-card-edit>
 
         </div>
 

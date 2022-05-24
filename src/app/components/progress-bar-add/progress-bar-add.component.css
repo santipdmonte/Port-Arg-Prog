@@ -20,3 +20,8 @@
 .rango{
     width: 90%;
 }
+
+.btn-container{
+    display:flex;
+    justify-content: space-evenly;
+}

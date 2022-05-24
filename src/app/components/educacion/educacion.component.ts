@@ -17,7 +17,6 @@ export class EducacionComponent implements OnInit {
 
   showEditInterface: boolean = true;
   subscription?: Subscription;
-
   educacion: Educacion[] = [];
   editEducacion: Educacion = {};
 
@@ -37,7 +36,6 @@ export class EducacionComponent implements OnInit {
   }
 
   delete(edu: Educacion){
-    console.log(edu.id_educacion);
     this.educacionService.deleteEducacion(edu).subscribe(
       ()=>(
         this.educacion = this.educacion.filter( (e) => e.id_educacion !== edu.id_educacion)
@@ -47,10 +45,7 @@ export class EducacionComponent implements OnInit {
 
   public toEditEdu = new EventEmitter();
 
-
-
   onEdit: Educacion = {};
-  oldEdit: Educacion = {};
   
   ToEdit(edu: Educacion){
     this.toEditEdu.emit()
@@ -61,8 +56,6 @@ export class EducacionComponent implements OnInit {
 
 
   addEducacion(edu: Educacion){
-    console.log(edu)
-    console.log('guardado en edu')
     this.educacionService.addEducacion(edu).subscribe(
       (educacion: Educacion) => this.educacion.push(educacion)
     )

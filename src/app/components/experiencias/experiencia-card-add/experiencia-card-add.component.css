@@ -28,3 +28,8 @@
     width:40%;
 }
 
+.btn-container{
+    display:flex;
+    justify-content: space-evenly;
+}
+

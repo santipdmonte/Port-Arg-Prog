@@ -1,7 +1,7 @@
 <div class="proyecto-content">
     <a href="#"><img class="proyectos-img" src="assets/img/pic04.jpg"/></a>     
     
-    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">     <!--- *ngIf="showAddEdu"-->
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="proyectoForm">   <!--- *ngIf="showAddEdu"-->
 
         <!-- <input type="image"> -->
 
@@ -9,7 +9,7 @@
         <input 
             class="title_input"
             name="nombre_proyecto"
-            [(ngModel)]="nombre_proyecto"
+            formControlName="nombre_proyecto"
             type="text"
             placeholder="Nombre del proyecto..."
         >
@@ -18,7 +18,7 @@
         <textarea 
             class="textaera_input" 
             name="descripcion_proyecto"
-            [(ngModel)]="descripcion_proyecto"
+            formControlName="descripcion_proyecto"
             placeholder="Descripcion del proyecto..."
             maxlength="500"
             minlength="1">
@@ -28,7 +28,7 @@
         <input 
             class=""
             name="url_proyecto"
-            [(ngModel)]="url_proyecto"
+            formControlName="url_proyecto"
             type="url"
             placeholder="Link del proyecto..."
         >
@@ -37,16 +37,25 @@
         <input 
             class=""
             name="url_foto_proyecto"
-            [(ngModel)]="url_foto_proyecto"
+            formControlName="url_foto_proyecto"
             type="file"
             accept=".jpg, .png, .jepg"
             placeholder="Foto proyecto..."
         >
 
-        <input 
-            type="submit" 
-            value="Guardar proyecto" 
-            class="btn btn-success"
-        >
+        <div class="btn-container">
+            <input 
+                type="submit" 
+                value="Guardar proyecto" 
+                class="btn btn-success"
+                [disabled]="!proyectoForm.valid"
+            >
+
+            <button
+                class="btn btn-danger"               
+                (click)="cancelClick()"
+            >Cancelar </button>
+            
+        </div>
     </form>            
 </div> 

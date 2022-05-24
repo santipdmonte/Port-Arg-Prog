@@ -1,8 +1,6 @@
 <div class="content">
     <circle-progress 
-        title="{{nombre_habilidad}}"
-        [percent]="rango || 0"
-        [subtitle]="toString(rango) "
+        
         class="circle"       
         [space]="-10" 
         [radius]="100" 
@@ -11,18 +9,23 @@
         [outerStrokeColor]="'#4882c2'" 
         [innerStrokeColor]="'#e7e8ea'" 
         [animation]="true"
-        [animationDuration]="1000">  <!-- [percent]="bar.progress" -->
+        [animationDuration]="1000">  
+        <!--  
+            title="{{nombre_habilidad}}"
+            [percent]="rango || 0"
+            [subtitle]="toString(rango) "
+        -->
     </circle-progress>
 
-    <form class="cont-form" (ngSubmit)="onSubmit()">
+    <form class="cont-form" (ngSubmit)="onSubmit()" [formGroup]="habilidadForm">
 
         <p>Ingresar nombre del lenguaje/habilidad</p>
         <input 
             type="text" 
             placeholder="Nombre del lenguaje/habilidad..."
+            formControlName="nombre_habilidad"
             name="nombre_habilidad"
             id="nombre_habilidad"
-            [(ngModel)]="nombre_habilidad"
         >
 
         <div class="rango_cont">
@@ -30,21 +33,30 @@
                 class="rango"            
                 type="range"
                 name="rango"
+                formControlName="rango"
                 id="rango"
                 min="0"
                 max="100"
                 step="5"
-                [(ngModel)]="rango"
             >  
-            {{rango}}
+            <!--{{this.habilidadForm.get(rango)}}-->
         </div>
         
-        
-        <input 
-            class="btn btn-success" 
-            type="submit" 
-            value="Guardar habilidad" 
-            >
+
+            <div class="btn-container">
+
+                <input 
+                    class="btn btn-success" 
+                    type="submit" 
+                    value="Guardar cambios" 
+                    [disabled]="!habilidadForm.valid"
+                >
+    
+                <button
+                    class="btn btn-danger"               
+                    (click)="cancelClick()"
+                >Cancelar </button>
+            </div>
 
     </form>
 

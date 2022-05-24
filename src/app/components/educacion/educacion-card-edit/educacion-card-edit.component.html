@@ -8,10 +8,8 @@
         <p>Nombre de la educación</p>
         <input 
             class="title_input"
-            name="institucion_edu"
-            
+            name="institucion_edu"          
             formControlName="institucion_edu"
-
             type="text"
             placeholder="Nombre de la educación"
         >                                                <!-- [(ngModel)]="institucion_edu"  -->
@@ -20,9 +18,7 @@
         <textarea 
             class="textaera_input" 
             name="descripcion_edu"
-
-            formControlName="descripcion_edu"
-            
+            formControlName="descripcion_edu"          
             placeholder="Ingresar descripcion de educación..."
             maxlength="500"
             minlength="1"
@@ -32,9 +28,7 @@
         <input 
             class=""
             name="url_foto_edu"
-
-            formControlName="url_foto_edu"
-            
+            formControlName="url_foto_edu"           
             type="url"
             accept=".jpg, .png, .jepg"
         >   <!-- [(ngModel)]="url_foto_edu"  -->
@@ -44,7 +38,7 @@
         <div class="btn-container">
             <input 
             type="submit" 
-            value="Guardar edicion de educación" 
+            value="Guardar cambios" 
             class="btn btn-success"
             [disabled]="!educacionForm.valid"
             >

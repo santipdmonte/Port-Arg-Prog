@@ -1,1 +1,61 @@
-<p>proyectos-card-edit works!</p>
+<div class="proyecto-content">
+    <a href="#"><img class="proyectos-img" src="assets/img/pic04.jpg"/></a>     
+    
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="proyectoForm">   <!--- *ngIf="showAddEdu"-->
+
+        <!-- <input type="image"> -->
+
+        <p>Nombre del proyecto</p>
+        <input 
+            class="title_input"
+            name="nombre_proyecto"
+            formControlName="nombre_proyecto"
+            type="text"
+            placeholder="Nombre del proyecto..."
+        >
+
+        <p>Descripcion del proyecto</p>
+        <textarea 
+            class="textaera_input" 
+            name="descripcion_proyecto"
+            formControlName="descripcion_proyecto"
+            placeholder="Descripcion del proyecto..."
+            maxlength="500"
+            minlength="1">
+        </textarea>
+
+        <p>Link proyecto</p>
+        <input 
+            class=""
+            name="url_proyecto"
+            formControlName="url_proyecto"
+            type="url"
+            placeholder="Link del proyecto..."
+        >
+
+        <p>Url foto proyecto (assets/img/...)</p>
+        <input 
+            class=""
+            name="url_foto_proyecto"
+            formControlName="url_foto_proyecto"
+            type="file"
+            accept=".jpg, .png, .jepg"
+            placeholder="Foto proyecto..."
+        >
+
+        <div class="btn-container">
+            <input 
+                type="submit" 
+                value="Guardar proyecto" 
+                class="btn btn-success"
+                [disabled]="!proyectoForm.valid"
+            >
+
+            <button
+                class="btn btn-danger"               
+                (click)="cancelClick()"
+            >Cancelar </button>
+            
+        </div>
+    </form>            
+</div> 

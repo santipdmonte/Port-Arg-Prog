@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ExperienciaService } from '../../../service/experiencia/experiencia.service';
 import { Experiencia } from '../../../Models/Experiencia';
 import { empty } from 'rxjs';
@@ -12,14 +12,19 @@ import { empty } from 'rxjs';
 })
 export class ExperienciaCardAddComponent implements OnInit {
 
+  
+  
   @Output() onAddExperiencia: EventEmitter<Experiencia> = new EventEmitter();
-  @Input() toEditExpe :Experiencia = {};
 
-    //educacionForm?: FormGroup ;
-    nombre_expe: String = '' ;
-    descripcion_expe: String= '';
-    url_foto_expe: String= 'pic04.jpg';
-    personas_id_persona: number = 1;
+  public experienciaForm = new FormGroup({
+    id_experiencias: new FormControl (''),
+    nombre_expe: new FormControl (''),
+    descripcion_expe: new FormControl ('') ,
+    url_foto_expe: new FormControl (''),
+    personas_id_persona: new FormControl ('1'),
+  });  
+  
+
   
     constructor(
       public fb: FormBuilder,
@@ -28,26 +33,29 @@ export class ExperienciaCardAddComponent implements OnInit {
   
     ngOnInit(): void {
   
-      //this.educacionForm = this.fb.group({
-      //  id_educacion: [''],
-      //  institucion_edu: [''] ,
-      //  descripcion_edu: [''],
-      //  url_foto_edu: ['src/img/argprog'],
-      //  personas_id_persona: [''],
-      //})
+      this.experienciaForm = this.fb.group({
+        id_experiencias: [''] ,
+        nombre_expe: ['',Validators.required] ,
+        descripcion_expe: ['',Validators.required],
+        url_foto_expe: ['assets/img/pic04.jpg'],
+        personas_id_persona: ['1'],
+      })
   
     }
   
-    onSubmit(){
-      if(this.descripcion_expe.length == 0 || this.nombre_expe.length == 0 ){
-        alert('Por favor completar los datos de la experiencia!');
-        return 
-      }
-      this.url_foto_expe = ("assets/img/"+this.url_foto_expe.replace("C:\\fakepath\\",""));
-      const {nombre_expe,descripcion_expe,personas_id_persona,url_foto_expe} = this
-      const newExperiencia = { nombre_expe,descripcion_expe,personas_id_persona,url_foto_expe }
   
-      this.onAddExperiencia.emit(newExperiencia);
-    }
+  onSubmit(){ 
+    this.onAddExperiencia.emit(this.experienciaForm.value);
+    this.cancelClick();
+  }
+
+  
+
+  @Output() cancel: EventEmitter<any> = new EventEmitter();
+
+  cancelClick(){
+    this.cancel.emit();
+  }
+
 
 }

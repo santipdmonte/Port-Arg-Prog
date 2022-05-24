@@ -43,6 +43,7 @@ export class EducacionCardEditComponent implements OnInit {
   
   onSubmit(){
     this.onAddEducacion.emit(this.educacionForm.value);
+    this.cancelClick();
   }
 
   @Output() cancel: EventEmitter<any> = new EventEmitter();

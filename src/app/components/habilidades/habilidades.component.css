@@ -13,6 +13,7 @@
 .container-titulo{
     display:flex;
     justify-content:space-between;
+    flex-direction: row-reverse;
 }
 
 .cont-habilidades{

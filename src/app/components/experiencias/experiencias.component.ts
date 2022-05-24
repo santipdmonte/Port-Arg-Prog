@@ -43,11 +43,17 @@ export class ExperienciasComponent implements OnInit {
     )
   }
 
-  @Output() toEdit: Experiencia = {};
+  public toEditExpe = new EventEmitter();
+
+  onEdit: Experiencia = {};
   
-  ToEdit(expe: any){
-  this.toEdit = expe;
+  ToEdit(expe: Experiencia){
+    this.toEditExpe.emit()
+    this.onEdit = expe;
+    this.interfaceEdit();
   }
+
+
 
   addExperiencia(expe: Experiencia){
     this.experienciaService.add(expe).subscribe(
@@ -62,6 +68,16 @@ export class ExperienciasComponent implements OnInit {
   
     interfaceAdd(){
       this.interfaceCardAdd = !this.interfaceCardAdd
+      if (this.interfaceCardEdit){
+        this.interfaceCardEdit = !this.interfaceCardEdit
+      }
+    }
+  
+    interfaceEdit(){
+      this.interfaceCardEdit = !this.interfaceCardEdit
+      if (this.interfaceCardAdd){
+        this.interfaceCardAdd = !this.interfaceCardAdd
+      }
     }
 
 }

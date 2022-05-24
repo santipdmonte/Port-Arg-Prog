@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { ProyectoService } from '../../../service/proyecto/proyecto.service';
 import { Proyecto } from '../../../Models/Proyecto';
 import { empty } from 'rxjs';
@@ -12,16 +12,19 @@ import { empty } from 'rxjs';
 })
 export class ProyectosCardAddComponent implements OnInit {
 
-  @Output() onAddProyecto: EventEmitter<Proyecto> = new EventEmitter();
-  @Input() toEditProy :Proyecto = {};
 
-    //educacionForm?: FormGroup ;
-    nombre_proyecto: String = '' ;
-    descripcion_proyecto: String= '';
-    url_foto_proyecto: String= '';
-    url_proyecto: String= '';
-    personas_id_persona: number = 1;
-    //assets/img/civet-web.png
+
+  @Output() onAddProyecto: EventEmitter<Proyecto> = new EventEmitter();
+
+  public proyectoForm = new FormGroup({
+    id_proyectos: new FormControl (''),
+    nombre_proyecto: new FormControl ('') ,
+    descripcion_proyecto: new FormControl (''),
+    url_foto_proyecto: new FormControl (''),
+    url_proyecto: new FormControl (''),
+    personas_id_persona: new FormControl ('1'),
+  });
+
   
     constructor(
       public fb: FormBuilder,
@@ -29,18 +32,27 @@ export class ProyectosCardAddComponent implements OnInit {
     ) { }
   
     ngOnInit(): void {
+
+      this.proyectoForm = this.fb.group({
+        id_proyectos: [''] ,
+        nombre_proyecto: ['',Validators.required] ,
+        descripcion_proyecto: ['',Validators.required],
+        url_foto_proyecto: ['assets/img/civet-web.png'],
+        url_proyecto: [''],
+        personas_id_persona: ['1'],
+      })
     }
   
     onSubmit(){
-      if(this.descripcion_proyecto.length == 0 || this.nombre_proyecto.length == 0 ){
-        alert('Por favor completar los datos de la experiencia!');
-        return 
-      }
-      this.url_foto_proyecto = ("assets/img/"+this.url_foto_proyecto.replace("C:\\fakepath\\",""));
-      var {nombre_proyecto, descripcion_proyecto, url_foto_proyecto,url_proyecto, personas_id_persona} = this
-      var newProyecto = {nombre_proyecto, descripcion_proyecto, url_foto_proyecto,url_proyecto, personas_id_persona}
-      
-      this.onAddProyecto.emit(newProyecto);
+      this.onAddProyecto.emit(this.proyectoForm.value);
+      this.cancelClick();
+    }
+
+
+    @Output() cancel: EventEmitter<any> = new EventEmitter();
+
+    cancelClick(){
+      this.cancel.emit();
     }
 
 }

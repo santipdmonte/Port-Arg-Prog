@@ -1,7 +1,7 @@
 <div class="content">
     <img src="assets/img/pic04.jpg" class="img" alt="" /> 
     
-    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data">     <!--- *ngIf="showAddEdu"-->
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="experienciaForm">     <!--- *ngIf="showAddEdu"-->
 
         <!-- <input type="image"> -->
     
@@ -9,7 +9,7 @@
         <input 
             class="title_input"
             name="nombre_expe"
-            [(ngModel)]="nombre_expe"
+            formControlName="nombre_expe"
             type="text"
             placeholder="Nombre de la experiencia"
         > 
@@ -18,7 +18,7 @@
         <textarea 
             class="textaera_input" 
             name="descripcion_expe"
-            [(ngModel)]="descripcion_expe"
+            formControlName="descripcion_expe"
             placeholder="Ingresar descripcion experiencia..."
             maxlength="500"
             minlength="1"> 
@@ -28,16 +28,24 @@
         <input 
             class=""
             name="url_foto_expe"
-            [(ngModel)]="url_foto_expe"
+            formControlName="url_foto_expe"
             type="file"
             accept=".jpg, .png, .jepg"
         >
-    
-        <input 
+
+        <div class="btn-container">
+            <input 
             type="submit" 
             value="Guardar experiencia" 
             class="btn btn-success"
-        >
+            [disabled]="!experienciaForm.valid"
+            >
+
+            <button
+                class="btn btn-danger"               
+                (click)="cancelClick()"
+            >Cancelar </button>
+        </div>
     </form>
 </div> 
 

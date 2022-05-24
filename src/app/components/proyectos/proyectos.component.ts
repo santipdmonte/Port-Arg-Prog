@@ -36,7 +36,6 @@ export class ProyectosComponent implements OnInit {
   }
 
   delete(proy: any){
-    console.log(proy)
     this.proyectoService.delete(proy.id_proyectos).subscribe(
       ()=>(
         this.proyecto = this.proyecto.filter( (p) => p.id_proyectos !== proy.id_proyectos)
@@ -44,25 +43,41 @@ export class ProyectosComponent implements OnInit {
     )
   }
 
-  @Output() toEdit: Proyecto = {};
+  public toEditProy = new EventEmitter();
+
+  onEdit: Proyecto = {};
   
   ToEdit(proy: any){
-  this.toEdit = proy;
+    this.toEditProy.emit()
+    this.onEdit = proy;
+    this.interfaceEdit();
   }
 
-  addProyecto(proy: Proyecto){
+
+
+  addProyecto(proy: any){
     this.proyectoService.add(proy).subscribe(
       (proyecto: Proyecto) => this.proyecto.push(proyecto)
     )
   }
 
-    //-------- Interfaces ----------
+  //-------- Interfaces ----------
 
-    interfaceCardEdit: boolean = false;
-    interfaceCardAdd: boolean = false;
-  
-    interfaceAdd(){
+  interfaceCardEdit: boolean = false;
+  interfaceCardAdd: boolean = false;
+
+  interfaceAdd(){
+    this.interfaceCardAdd = !this.interfaceCardAdd
+    if (this.interfaceCardEdit){
+      this.interfaceCardEdit = !this.interfaceCardEdit
+    }
+  }
+
+  interfaceEdit(){
+    this.interfaceCardEdit = !this.interfaceCardEdit
+    if (this.interfaceCardAdd){
       this.interfaceCardAdd = !this.interfaceCardAdd
     }
+  }
 
 }

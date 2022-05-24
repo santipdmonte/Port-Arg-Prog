@@ -46,6 +46,7 @@ export class EducacionCardAddComponent implements OnInit {
   
   onSubmit(){
     this.onAddEducacion.emit(this.educacionForm.value);
+    this.cancelClick();
   }
 
 
