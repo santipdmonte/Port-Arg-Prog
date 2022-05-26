@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { UiService } from 'src/app/service/ui.service';
 import { Subscription } from 'rxjs';
 
@@ -9,8 +9,10 @@ import { Subscription } from 'rxjs';
 })
 export class HeaderComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  showEditInterface: boolean = false;
   subscription?: Subscription;
+
+  @Input() login: boolean = true
 
   constructor(
     private UiService: UiService
@@ -24,6 +26,17 @@ export class HeaderComponent implements OnInit {
 
   toggleEditInterface(){
     this.UiService.toggleEditInterface();
+  }
+
+  //----- interface ----------------------------------------------------
+
+  interfaceCardSesion: boolean = false;
+
+  interfaceSesion(){
+    this.interfaceCardSesion = !this.interfaceCardSesion
+    //if (this.interfaceCardEdit){
+    //  this.interfaceCardEdit = !this.interfaceCardEdit
+    //}
   }
 
 }

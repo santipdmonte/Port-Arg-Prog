@@ -6,7 +6,7 @@ import { Observable, Subject } from 'rxjs';
 })
 export class UiService {
 
-  private showEditInterface: boolean = true;
+  private showEditInterface: boolean = true ;
   private subject = new Subject<any>();
 
   constructor() { }

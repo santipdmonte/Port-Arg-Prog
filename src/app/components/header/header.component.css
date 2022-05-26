@@ -46,3 +46,16 @@ a{
     min-width:200px;
 
 }
+
+.incio-sesion-card{
+    position: absolute;
+    top: 80px;
+    left: 50%;
+    margin-left: -400px;
+    height: 600px;
+    width: 800px;
+    background-color: aliceblue;
+    border: 1px solid #000;
+    border-radius:10%
+    
+}

@@ -16,7 +16,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class ProyectosCardComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  @Input() showEditInterface: boolean = false;
   subscription?: Subscription;
   proyecto: Proyecto[] = [];
 

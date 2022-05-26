@@ -1,0 +1,36 @@
+<div class="content">
+
+    <h2 class="titulo">
+        Inciar sesion
+    </h2>
+
+    <form class="form" [formGroup]="userForm">
+        <p>Nombre de usuario</p>
+        <input 
+            type="text"
+            formControlName="user_name"
+        >
+        <p></p>
+        Contraseña
+        <input 
+            type="password"
+            formControlName="user_password"
+        >
+
+
+        <input 
+            class="btn btn-success"
+            type="submit" 
+            value="Enviar" 
+            [disabled]="!userForm.valid"
+            (click)="click()"                 
+        > 
+
+    </form>
+
+    <fa-icon 
+        class="button button-delete " 
+        [icon]="faTimesCircle" 
+        (click)="cancelClick()"
+    ></fa-icon>
+</div>

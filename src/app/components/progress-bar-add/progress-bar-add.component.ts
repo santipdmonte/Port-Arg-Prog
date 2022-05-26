@@ -35,7 +35,7 @@ export class ProgressBarAddComponent implements OnInit {
     this.habilidadForm = this.fb.group({
       id_habilidades: [''] ,
       nombre_habilidad: ['',Validators.required] ,
-      rango: [0,Validators.required],
+      rango: [,Validators.required],
       personas_id_persona: ['1'],
     })
 

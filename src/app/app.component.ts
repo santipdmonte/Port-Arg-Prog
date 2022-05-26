@@ -11,6 +11,8 @@ import { PersonasService } from './service/personas/personas.service';
 export class AppComponent implements OnInit {
   title = 'Port-Arg-Prog';
 
+  login: boolean = true;
+
   constructor (
   ){}
 

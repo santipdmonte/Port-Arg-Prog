@@ -10,9 +10,10 @@ import { empty } from 'rxjs';
   templateUrl: './experiencia-card-add.component.html',
   styleUrls: ['./experiencia-card-add.component.css']
 })
-export class ExperienciaCardAddComponent implements OnInit {
 
-  
+
+
+export class ExperienciaCardAddComponent implements OnInit {
   
   @Output() onAddExperiencia: EventEmitter<Experiencia> = new EventEmitter();
 

@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
 
 export class ProyectosComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  showEditInterface: boolean = false;
   subscription?: Subscription;
   proyecto: Proyecto[] = [];
   editProyecto: Proyecto = {};

@@ -16,7 +16,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class ExperienciaCardComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  @Input() showEditInterface: boolean = false;
   subscription?: Subscription;
   experiencia: Experiencia[] = [];
 

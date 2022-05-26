@@ -16,7 +16,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 })
 export class EducacionCardComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  @Input() showEditInterface: boolean = false;
   subscription?: Subscription;
   educacion: Educacion[] = [];
 

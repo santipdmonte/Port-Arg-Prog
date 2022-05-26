@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
 
 export class EducacionComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  showEditInterface: boolean = false;
   subscription?: Subscription;
   educacion: Educacion[] = [];
   editEducacion: Educacion = {};
@@ -77,6 +77,9 @@ export class EducacionComponent implements OnInit {
     this.interfaceCardEdit = !this.interfaceCardEdit
     if (this.interfaceCardAdd){
       this.interfaceCardAdd = !this.interfaceCardAdd
+    }
+    if (!(this.showEditInterface)){
+      this.interfaceCardEdit= false;
     }
   }
   

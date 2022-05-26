@@ -32,6 +32,7 @@ import { EducacionCardEditComponent } from './components/educacion/educacion-car
 import { HabilidadesCardEditComponent } from './components/habilidades/habilidades-card-edit/habilidades-card-edit.component';
 import { ExperienciasCardEditComponent } from './components/experiencias/experiencias-card-edit/experiencias-card-edit.component';
 import { ProyectosCardEditComponent } from './components/proyectos/proyectos-card-edit/proyectos-card-edit.component';
+import { InicioSesionComponent } from './components/header/inicio-sesion/inicio-sesion.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent}
@@ -60,7 +61,8 @@ const appRoutes: Routes = [
     EducacionCardEditComponent,
     HabilidadesCardEditComponent,
     ExperienciasCardEditComponent,
-    ProyectosCardEditComponent
+    ProyectosCardEditComponent,
+    InicioSesionComponent,
   ],
   imports: [
     BrowserModule,

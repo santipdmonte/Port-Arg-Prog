@@ -9,13 +9,25 @@
             <a href="#" class="media"><i class="fab fa-github fa-lg"></i></a>
             <a href="#" class="media"><i class="fab fa-twitter fa-lg"></i></a> 
             <a href="#" class="media"><i class="fab fa-linkedin fa-lg"></i></a> 
+
+            <button class="btn btn-primary">
+            <i class="bi bi-twitter"></i> 
+        </button>
         </div>  
         -->
         
         <div class="navbar" *ngIf="!showEditInterface">
+            
             <a href="#menu" class="menu">Menu</a>
-            <a href="#" class="log">Iniciar Sesion</a>       
+
             <a 
+                href="#" 
+                class="log"
+                (click)="interfaceSesion()"
+                >Iniciar Sesion</a>   
+
+            <a 
+                *ngIf = "login"
                 class="log" 
                 (click)="toggleEditInterface()"
             > Editar
@@ -27,6 +39,12 @@
             *ngIf="showEditInterface"
             (click)="toggleEditInterface()"          
         >Finalizar edicion</button>
-        
+
     </nav>
+
+    <app-inicio-sesion
+        *ngIf="interfaceCardSesion"
+        class="incio-sesion-card"
+        (cancel)="interfaceSesion()"
+    ></app-inicio-sesion>
 </header>

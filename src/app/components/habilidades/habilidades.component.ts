@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
 
 export class HabilidadesComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  showEditInterface: boolean = false;
   subscription?: Subscription;
   habilidad: Habilidad[] = [];
   editHabilidad: Habilidad = {};

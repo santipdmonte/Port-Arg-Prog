@@ -15,9 +15,9 @@ import { Habilidad } from 'src/app/Models/Habilidad';
 })
 export class ProgressBarComponent implements OnInit {
 
+  @Input() showEditInterface: boolean = false;
   faPenToSquare = faPenToSquare
   faTimes = faTimes
-  showEditInterface: boolean = true;
   subscription?: Subscription;
 
   @Input() bar: Bar = new Bar();

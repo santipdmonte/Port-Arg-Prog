@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
 
 export class ExperienciasComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  showEditInterface: boolean = false;
   subscription?: Subscription;
   experiencia: Experiencia[] = [];
   editExperiencia: Experiencia = {};
