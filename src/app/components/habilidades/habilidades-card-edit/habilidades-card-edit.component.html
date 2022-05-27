@@ -1,6 +1,8 @@
 <div class="content">
-    <circle-progress 
-        
+    <circle-progress        
+        title="{{this.habilidadForm.value.nombre_habilidad}}"
+        [percent]="this.habilidadForm.value.rango || 0"
+        [subtitle]="toString(this.habilidadForm.value.rango || 0)"
         class="circle"       
         [space]="-10" 
         [radius]="100" 

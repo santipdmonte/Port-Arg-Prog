@@ -1,6 +1,8 @@
 <div class="content">
-    <circle-progress 
-        
+    <circle-progress        
+        title="{{this.habilidadForm.value.nombre_habilidad}}"
+        [percent]="this.habilidadForm.value.rango || 0"
+        [subtitle]="toString(this.habilidadForm.value.rango || 0)"
         class="circle"       
         [space]="-10" 
         [radius]="100" 
@@ -10,11 +12,6 @@
         [innerStrokeColor]="'#e7e8ea'" 
         [animation]="true"
         [animationDuration]="1000">  
-        <!--  
-            title="{{nombre_habilidad}}"
-            [percent]="rango || 0"
-            [subtitle]="toString(rango) "
-        -->
     </circle-progress>
 
     <form class="cont-form" (ngSubmit)="onSubmit()" [formGroup]="habilidadForm">
