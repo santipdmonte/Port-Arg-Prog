@@ -1,0 +1,93 @@
+<div class="content">
+    <h2>Acerca de Santiago</h2>
+    
+    
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="acercaDeForm">    
+
+        <div class="content-foto">
+        
+            <img src="assets/img/personal.jpeg" class="img" alt="" />
+            
+            <div class="foto">
+                <p>Foto </p>
+                <input 
+                    class=""
+                    name="url_foto_edu"
+                    placeholder="Foto URL"
+                    formControlName="url_foto_acerca_de"
+                    type="url"
+                    accept=".jpg, .png, .jepg"
+                >     
+            </div>
+
+        </div>
+           
+        <p>Tecnologias/Lenguajes</p>
+        <input 
+            class="title_input"
+            name="institucion_edu"          
+            formControlName="tecnologias"
+            type="text"
+            placeholder="Nombre de la educación"
+        >                                            
+
+        <p>Descripcion</p>
+        <textarea 
+            class="textaera_input" 
+            name="descripcion_edu"
+            formControlName="descripcion_acerca_de"          
+            placeholder="Ingresar descripcion de educación..."
+            maxlength="500"
+            minlength="1"
+        ></textarea> 
+
+        <div class="btn-container">
+            <input 
+            type="submit" 
+            value="Guardar cambios" 
+            class="btn btn-success"
+            [disabled]="!acercaDeForm.valid"
+            >
+
+            <button
+                class="btn btn-danger" 
+                (click)="cancelClick()"                            
+            >Cancelar </button> 
+        </div>
+
+    </form>
+    
+</div> 
+
+
+<!---
+        <p>Redes Sociales</p>
+        <div class="cont-redes">
+            <p>Twitter</p>
+            <input 
+                class="title_input"
+                name="institucion_edu"          
+            
+                type="text"
+                placeholder="Nombre de la educación"
+            >                       formControlName="" 
+    
+            <p>GitHub</p>
+            <input 
+                class="title_input"
+                name="institucion_edu"          
+            
+                type="text"
+                placeholder="Nombre de la educación"
+            >                       formControlName="" 
+    
+            <p>LinkedIn</p>
+            <input 
+                class="title_input"
+                name="institucion_edu"          
+            
+                type="text"
+                placeholder="Nombre de la educación"
+            >                       formControlName="" 
+        </div>
+-->

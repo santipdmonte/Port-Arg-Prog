@@ -48,8 +48,6 @@ export class EducacionCardEditComponent implements OnInit {
 
   @Output() cancel: EventEmitter<any> = new EventEmitter();
 
-  
-
   cancelClick(){
     this.cancel.emit();
   }

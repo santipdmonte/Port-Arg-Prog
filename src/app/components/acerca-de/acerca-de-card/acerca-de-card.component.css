@@ -44,22 +44,6 @@
     border-radius: 60%;
 }
 
-/* Interface Card*/
-
-.card{
-    position: absolute;
-    position:fixed;
-    z-index: 1000;
-    top: 80px;
-    left: 50%;
-    margin-left: -400px;
-    height: 600px;
-    width: 800px;
-    background-color: aliceblue;
-    border: 1px solid #000;
-    border-radius:10% 
-}
-
 /* Style Botones*/
 
 .cont-button{
@@ -67,5 +51,3 @@
     top: 0;
     left: 0;
 }
-
-

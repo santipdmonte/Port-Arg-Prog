@@ -33,6 +33,8 @@ import { HabilidadesCardEditComponent } from './components/habilidades/habilidad
 import { ExperienciasCardEditComponent } from './components/experiencias/experiencias-card-edit/experiencias-card-edit.component';
 import { ProyectosCardEditComponent } from './components/proyectos/proyectos-card-edit/proyectos-card-edit.component';
 import { InicioSesionComponent } from './components/header/inicio-sesion/inicio-sesion.component';
+import { AcercaDeEditComponent } from './components/acerca-de/acerca-de-edit/acerca-de-edit.component';
+import { AcercaDeCardComponent } from './components/acerca-de/acerca-de-card/acerca-de-card.component';
 
 const appRoutes: Routes = [
   {path: '', component: MainComponent}
@@ -63,6 +65,8 @@ const appRoutes: Routes = [
     ExperienciasCardEditComponent,
     ProyectosCardEditComponent,
     InicioSesionComponent,
+    AcercaDeEditComponent,
+    AcercaDeCardComponent,
   ],
   imports: [
     BrowserModule,

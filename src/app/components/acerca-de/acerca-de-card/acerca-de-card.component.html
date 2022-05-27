@@ -1,0 +1,20 @@
+<div class="desc-cont">
+        
+        <!--<p class="acercaDe-desc">Estudiante de ingenieria en Sistemas de Informacion. Desarrollador Web Full Stack. Constante aprendizaje y adaptacion de nuevas tecnologias. Buen desempeño trabajando en equipo junto a habilidades de comunicacion y liderazgo. </p> -->
+        <p class="acercaDe-desc">{{acer.descripcion_acerca_de}} </p>
+
+        <!--<p class="acercaDe-lenguajes">[Angular - Java - Spring - SQL]</p>-->
+        <p class="acercaDe-lenguajes">{{acer.tecnologias}}</p>
+
+        <div class="cont-button"> 
+                <fa-icon 
+                        *ngIf="showEditInterface"
+                        class="btn button button-edit"
+                        [icon]="faPenToSquare" 
+                        (click)="editClick()"
+                ></fa-icon>
+        </div>
+        
+</div>    
+
+

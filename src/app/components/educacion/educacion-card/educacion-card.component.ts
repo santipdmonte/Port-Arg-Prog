@@ -5,9 +5,6 @@ import { UiService } from 'src/app/service/ui.service';
 import { EducacionService } from 'src/app/service/educacion/educacion.service';
 import { Educacion } from '../../../Models/Educacion';
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
-
-
 
 @Component({
   selector: 'app-educacion-card',
@@ -19,8 +16,6 @@ export class EducacionCardComponent implements OnInit {
   @Input() showEditInterface: boolean = false;
   subscription?: Subscription;
   educacion: Educacion[] = [];
-
-  faTimes = faTimes
   
   @Input() edu: Educacion = {};
   @Output() DeleteClick = new EventEmitter();
