@@ -16,15 +16,18 @@ export class UserService {
   
   private user: User = {};
   
-  private apiUrl = 'http://localhost:8080/service/validar'
+  private apiUrl = 'http://localhost:8080/user'
 
   constructor(
     private http:HttpClient
   ) { }
 
-    validar(user: User): Observable<User>{
-      console.log(user)
-      return this.http.post<User>(this.apiUrl, user, httpOptions);
+    validar(user: User): Observable<boolean>{
+      return this.http.post<boolean>(`${this.apiUrl}/validar`, user, httpOptions);
     }
+
+    //get(): Observable<User> {
+    // return this.http.get<User>(`${this.apiUrl}/traer`)
+    //}
 
 }

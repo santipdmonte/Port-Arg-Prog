@@ -1,4 +1,6 @@
 <app-header
+    (onLoginSuccess)="loginSuccess()"
+    (onLoginExit)="loginExit()"
     (login)="login"
 ></app-header>
 <app-banner></app-banner>

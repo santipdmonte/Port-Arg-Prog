@@ -13,6 +13,7 @@ export class InicioSesionComponent implements OnInit {
 
   faTimesCircle = faTimesCircle
 
+  userResponse: boolean = false;
   user: User = {};
 
   public userForm = new FormGroup({
@@ -37,28 +38,28 @@ export class InicioSesionComponent implements OnInit {
       rol: ['admin'],
       personas_id_persona: [1],
     })
-
   }
+
+  userValid: boolean = false;
+  @Output() loginSuccess = new EventEmitter<boolean>();
 
   onSubmit(){
-    console.log('enviado')
-    //if (this.userService.validar(this.userForm.value)){  
-    //}
-    //console.log(this.userService.validar(this.userForm.value))
-    
-    //this.cancelClick();
+
+    this.userService.validar(this.userForm.value).subscribe(
+      (userResponse: boolean) => {this.userResponse = userResponse
+      }); 
+
+    if (this.userResponse){  
+      this.userValid = true;
+      console.log(this.userValid)
+      this.loginSuccess.emit();
+    }
+    else if (!this.userResponse) {
+      alert('Contraseña incorrecta');
+    }
   }
 
-  userResponse: boolean = false;
-
-  click(){
-    this.userService.validar(this.userForm.value)
-    //console.log(this.userService.validar(this.userForm.value)).subscribe(
-    //  (userResponse: boolean) => {this.userResponse = userResponse
-    //  });
-    
-    console.log(this.userService.validar(this.userForm.value))
-  }
+  
 
   //--------- Interface ------------
 

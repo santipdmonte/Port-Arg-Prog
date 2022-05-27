@@ -18,18 +18,31 @@
         
         <div class="navbar" *ngIf="!showEditInterface">
             
-            <a href="#menu" class="menu">Menu</a>
+            <a 
+                href="#menu" 
+                class="menu"
+            >Menu</a>
 
             <a 
+                *ngIf="!login"
                 href="#" 
                 class="log"
                 (click)="interfaceSesion()"
-                >Iniciar Sesion</a>   
-
+                >Iniciar Sesion</a>
+             
+            <a 
+                *ngIf="login"
+                href="#" 
+                class="log"
+                (click)="cerrarSesion()"
+                style="color:rgb(255, 101, 101)"
+                >Cerrar Sesion</a>    
+            
             <a 
                 *ngIf = "login"
                 class="log" 
                 (click)="toggleEditInterface()"
+                style="color:rgb(255, 219, 100)"
             > Editar
             </a>
         </div>
@@ -46,5 +59,6 @@
         *ngIf="interfaceCardSesion"
         class="incio-sesion-card"
         (cancel)="interfaceSesion()"
+        (loginSuccess)="loginSuccess()"
     ></app-inicio-sesion>
 </header>

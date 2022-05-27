@@ -11,13 +11,21 @@ import { PersonasService } from './service/personas/personas.service';
 export class AppComponent implements OnInit {
   title = 'Port-Arg-Prog';
 
-  login: boolean = true;
+  login: boolean = false;
 
   constructor (
   ){}
 
   ngOnInit(): void {
 
+  }
+
+  loginSuccess(){
+    this.login= true;
+  }
+
+  loginExit(){
+    this.login= false;
   }
 
 }
