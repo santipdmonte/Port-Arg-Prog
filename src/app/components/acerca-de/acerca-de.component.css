@@ -57,7 +57,9 @@
     width: 800px;
     background-color: aliceblue;
     border: 1px solid #000;
-    border-radius:10% 
+    border-radius:10% ;
+
+    transition: 4s;
 }
 
 /* Style Botones*/

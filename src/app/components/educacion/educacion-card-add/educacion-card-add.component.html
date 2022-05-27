@@ -1,9 +1,10 @@
+<!--
 <div class="content">
     <img src="assets/img/pic04.jpg" class="img" alt="" />
     
-    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="educacionForm">     <!--- *ngIf="showAddEdu"-->
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="educacionForm">    
 
-        <!-- <input type="image"> -->
+        
 
         <p>Nombre de la educación</p>
         <input 
@@ -12,7 +13,7 @@
             formControlName="institucion_edu"
             type="text"
             placeholder="Nombre de la educación"
-        >                                                <!-- [(ngModel)]="institucion_edu"  -->
+        >                                               
 
         <p>Descripcion de educación</p>
         <textarea 
@@ -22,7 +23,7 @@
             placeholder="Ingresar descripcion de educación..."
             maxlength="500"
             minlength="1"
-            ></textarea>  <!-- [(ngModel)]="descripcion_edu"  -->            
+            ></textarea>          
 
         <p>Foto educacion</p>
         <input 
@@ -31,7 +32,7 @@
             formControlName="url_foto_edu"          
             type="url"
             accept=".jpg, .png, .jepg"
-        >   <!-- [(ngModel)]="url_foto_edu"  -->
+        >   
 
         <div class="btn-container">
             <input 
@@ -51,3 +52,88 @@
     </form>
     
 </div> 
+-->
+
+
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Educacion</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <img src="{{this.educacionForm.value.url_foto_edu}}" class="img" alt="" />
+            <form
+                (ngSubmit)="onSubmit()" 
+                enctype="multipart/form-data" 
+                [formGroup]="educacionForm"
+            >
+                <div class="mb-3">
+
+                    <label 
+                        for="recipient-name"                
+                        class="col-form-label"
+                    >Nombre educacion:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="recipient-name"
+                        name="institucion_edu"           
+                        formControlName="institucion_edu"
+                        type="text"
+                        placeholder="Nombre de la educación"
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Descripcion:</label>
+                    <textarea 
+                        class="form-control" 
+                        id="message-text"
+                        name="descripcion_edu"
+                        formControlName="descripcion_edu"           
+                        placeholder="Ingresar descripcion de educación..."
+                        maxlength="500"
+                        minlength="1"
+                    ></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Url foto:</label>
+                    <input 
+                        class="control"
+                        id="message-text"
+                        name="url_foto_edu"
+                        formControlName="url_foto_edu"           
+                        type="url"
+                        accept=".jpg, .png, .jepg"
+                    >  
+                </div>
+
+                <div class="modal-footer">
+
+                    <button 
+                        type="button" 
+                        class="btn btn-danger" 
+                        data-bs-dismiss="modal"
+                    >Cancel</button>
+        
+                    <button  
+                        type="submit"
+                        class="btn btn-success"                        
+                        value="Guardar educación" 
+                        class="btn btn-success"
+                        [disabled]="!educacionForm.valid"
+                        data-bs-dismiss="modal"
+                    >Guardar</button> <!-- type="submit" -->
+
+                </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>

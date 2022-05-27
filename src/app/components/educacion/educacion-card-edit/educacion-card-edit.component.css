@@ -31,3 +31,11 @@
     display:flex;
     justify-content: space-evenly;
 }
+
+.modal{
+    color: #4c5c96;
+}
+
+.btn-100{
+    width: 100%;
+}

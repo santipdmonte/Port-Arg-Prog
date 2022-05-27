@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
 
 export class EducacionComponent implements OnInit {
 
-  showEditInterface: boolean = false;
+  showEditInterface: boolean = true;
   subscription?: Subscription;
   educacion: Educacion[] = [];
   editEducacion: Educacion = {};
@@ -48,12 +48,10 @@ export class EducacionComponent implements OnInit {
   onEdit: Educacion = {};
   
   ToEdit(edu: Educacion){
-    this.toEditEdu.emit()
+    this.toEditEdu.emit(); 
     this.onEdit = edu;
     this.interfaceEdit();
   }
-
-
 
   addEducacion(edu: Educacion){
     this.educacionService.addEducacion(edu).subscribe(
@@ -61,26 +59,16 @@ export class EducacionComponent implements OnInit {
     )
   }
 
+  popOld(edu: Educacion){
+    this.educacion = this.educacion.filter( (e) => e.id_educacion !== edu.id_educacion)
+  }
+
   //-------- Interfaces ----------
 
   interfaceCardEdit: boolean = false;
-  interfaceCardAdd: boolean = false;
-
-  interfaceAdd(){
-    this.interfaceCardAdd = !this.interfaceCardAdd
-    if (this.interfaceCardEdit){
-      this.interfaceCardEdit = !this.interfaceCardEdit
-    }
-  }
 
   interfaceEdit(){
     this.interfaceCardEdit = !this.interfaceCardEdit
-    if (this.interfaceCardAdd){
-      this.interfaceCardAdd = !this.interfaceCardAdd
-    }
-    if (!(this.showEditInterface)){
-      this.interfaceCardEdit= false;
-    }
   }
   
 }
