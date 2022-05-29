@@ -13,7 +13,7 @@ import { Subscription } from 'rxjs';
 })
 export class AcercaDeCardComponent implements OnInit {
 
-  @Input() showEditInterface: boolean = true;
+  @Input() showEditInterface: boolean = false;
   subscription?: Subscription;
   acercade: AcercaDe[] = [];
   faPenToSquare = faPenToSquare

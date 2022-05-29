@@ -61,6 +61,10 @@ export class ExperienciasComponent implements OnInit {
     )
   }
 
+  popOld(expe: Experiencia){
+    this.experiencia = this.experiencia.filter( (e) => e.id_experiencias !== expe.id_experiencias)
+  }
+
     //-------- Interfaces ----------
 
     interfaceCardEdit: boolean = false;

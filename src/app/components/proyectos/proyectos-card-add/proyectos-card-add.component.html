@@ -1,9 +1,9 @@
+<!--
+
 <div class="proyecto-content">
     <a href="#"><img class="proyectos-img" src="assets/img/pic04.jpg"/></a>     
     
-    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="proyectoForm">   <!--- *ngIf="showAddEdu"-->
-
-        <!-- <input type="image"> -->
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="proyectoForm">  
 
         <p>Nombre del proyecto</p>
         <input 
@@ -59,3 +59,109 @@
         </div>
     </form>            
 </div> 
+
+-->
+
+<div 
+    class="modal fade" 
+    id="proyectoAddModal" 
+    tabindex="-1" 
+    aria-labelledby="exampleModalLabel" 
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content ">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar Proyecto</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="proyecto-content">
+            <div class="content modal-body">
+                <img src="{{this.proyectoForm.value.url_foto_proyecto}}" class="img" alt="" />
+                <form
+                    class="cont_form"
+                    (ngSubmit)="onSubmit()" 
+                    enctype="multipart/form-data" 
+                    [formGroup]="proyectoForm"
+                >
+                    <div class="mb-3">
+    
+                        <label 
+                            for="recipient-name"                
+                            class="col-form-label"
+                        >Nombre proyecto:</label>
+                        <input 
+                            type="text" 
+                            class="form-control" 
+                            id="recipient-name"
+                            name="nombre_proyecto"           
+                            formControlName="nombre_proyecto"
+                            type="text"
+                            placeholder="Nombre del proyecto"
+                        >
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Descripcion del proyecto:</label>
+                        <textarea 
+                            class="form-control" 
+                            id="message-text"
+                            name="descripcion_proyecto"
+                            formControlName="descripcion_proyecto"           
+                            placeholder="Ingresar descripcion del proyecto..."
+                            maxlength="500"
+                            minlength="1"
+                        ></textarea>
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Link proyecto</label>
+                        <input 
+                            class="control"
+                            id="message-text"
+                            name="url_proyecto"
+                            formControlName="url_proyecto"           
+                            type="url"
+                            accept=".jpg, .png, .jepg"
+                        >  
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="message-text" class="col-form-label">Url foto proyecto (assets/img/...)</label>
+                        <input 
+                            class="control"
+                            id="message-text"
+                            name="url_foto_proyecto"
+                            formControlName="url_foto_proyecto"           
+                            type="url"
+                            accept=".jpg, .png, .jepg"
+                        >  
+                    </div>             
+    
+                    <div class="modal-footer">
+    
+                        <button 
+                            type="button" 
+                            class="btn btn-danger" 
+                            data-bs-dismiss="modal"
+                        >Cancel</button>
+            
+                        <button  
+                            type="submit"
+                            class="btn btn-success"                        
+                            value="Guardar proyecto" 
+                            class="btn btn-success"
+                            [disabled]="!proyectoForm.valid"
+                            data-bs-dismiss="modal"
+                        >Guardar</button> <!-- type="submit" -->
+    
+                    </div>
+    
+              </form>
+            </div>
+        </div>
+        
+
+      </div>
+    </div>
+  </div>
+

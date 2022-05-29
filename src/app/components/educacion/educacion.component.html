@@ -2,8 +2,17 @@
     <section id="one" class="wrapper spotlight style1">
 
 
-        <h2 class="titulo educacion-titulo">Educación</h2>
-        
+        <div class="container-titulo">
+            <h2 class="titulo educacion-titulo">Educación</h2>
+            <button 
+                *ngIf="showEditInterface"
+                type="button" 
+                class="btn btn-outline-warning" 
+                data-bs-toggle="modal" 
+                data-bs-target="#exampleModal" 
+                data-bs-whatever="@mdo"
+            >Agregar Educacion</button>
+        </div>
 
         <div class="educaciones-content">               
 
@@ -26,13 +35,11 @@
             ></app-educacion-card-edit>
         </div>
 
-        <div *ngIf="showEditInterface" class="btn-100">
-            <app-educacion-card-add  
-                *ngIf="showEditInterface"                                
+        <app-educacion-card-add 
+            *ngIf="showEditInterface"                               
                 (onAddEducacion)="addEducacion($event)"                   
-            ></app-educacion-card-add>  
-            <button type="button" class="btn btn-outline-warning btn-100" data-bs-toggle="modal" data-bs-target="#exampleModal" data-bs-whatever="@mdo">Agregar Educacion</button>
-        </div>
+        ></app-educacion-card-add>  
+
         
     </section>               
 </section>

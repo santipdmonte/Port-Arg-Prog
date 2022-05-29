@@ -45,14 +45,16 @@ export class ProyectosCardAddComponent implements OnInit {
   
     onSubmit(){
       this.onAddProyecto.emit(this.proyectoForm.value);
-      this.cancelClick();
+      //this.reset();
     }
 
-
-    @Output() cancel: EventEmitter<any> = new EventEmitter();
-
-    cancelClick(){
-      this.cancel.emit();
-    }
+    reset() {
+      this.proyectoForm.value.id_proyectos = [''],
+      this.proyectoForm.value.nombre_proyecto = [''],
+      this.proyectoForm.value.descripcion_proyecto = [''],
+      this.proyectoForm.value.url_foto_proyecto = ['assets/img/civet-web.png'],
+      this.proyectoForm.value.url_proyecto = [''],
+      this.proyectoForm.value.personas_id_persona = ['1']
+  }
 
 }

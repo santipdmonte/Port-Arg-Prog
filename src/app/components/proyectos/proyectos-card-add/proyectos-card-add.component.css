@@ -16,7 +16,7 @@
     gap: 30px;
 }
 
-.cont_form{
+.content{
     display:flex;
     flex-direction:column;
     gap:10px;
@@ -34,4 +34,9 @@
 .btn-container{
     display:flex;
     justify-content: space-evenly;
+}
+
+.img{
+    width:65%;
+    margin:auto;
 }

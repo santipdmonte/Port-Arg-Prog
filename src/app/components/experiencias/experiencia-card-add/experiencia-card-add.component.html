@@ -1,9 +1,9 @@
+<!---
 <div class="content">
     <img src="assets/img/pic04.jpg" class="img" alt="" /> 
     
-    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="experienciaForm">     <!--- *ngIf="showAddEdu"-->
-
-        <!-- <input type="image"> -->
+    <form class="cont_form" (ngSubmit)="onSubmit()" enctype="multipart/form-data" [formGroup]="experienciaForm">    
+     
     
         <p>Nombre experiencia</p>
         <input 
@@ -48,4 +48,89 @@
         </div>
     </form>
 </div> 
+
+-->
+
+<div class="modal fade" id="experienciaAddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar experiencia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="content modal-body">
+            <img src="{{this.experienciaForm.value.url_foto_expe}}" class="img" alt="" />
+            <form
+                class="cont_form"
+                (ngSubmit)="onSubmit()" 
+                enctype="multipart/form-data" 
+                [formGroup]="experienciaForm"
+            >
+                <div class="mb-3">
+
+                    <label 
+                        for="recipient-name"                
+                        class="col-form-label"
+                    >Nombre experiencia:</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="recipient-name"
+                        name="nombre_expe"           
+                        formControlName="nombre_expe"
+                        type="text"
+                        placeholder="Nombre de la experiencia"
+                    >
+                </div>
+
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Descripcion:</label>
+                    <textarea 
+                        class="form-control" 
+                        id="message-text"
+                        name="descripcion_expe"
+                        formControlName="descripcion_expe"           
+                        placeholder="Ingresar descripcion de experiencia..."
+                        maxlength="500"
+                        minlength="1"
+                    ></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Url foto:</label>
+                    <input 
+                        class="control"
+                        id="message-text"
+                        name="url_foto_expe"
+                        formControlName="url_foto_expe"           
+                        type="url"
+                        accept=".jpg, .png, .jepg"
+                    >  
+                </div>
+
+                <div class="modal-footer">
+
+                    <button 
+                        type="button" 
+                        class="btn btn-danger" 
+                        data-bs-dismiss="modal"
+                    >Cancel</button>
+        
+                    <button  
+                        type="submit"
+                        class="btn btn-success"                        
+                        value="Guardar experiencia" 
+                        class="btn btn-success"
+                        [disabled]="!experienciaForm.valid"
+                        data-bs-dismiss="modal"
+                    >Guardar</button> <!-- type="submit" -->
+
+                </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>
 

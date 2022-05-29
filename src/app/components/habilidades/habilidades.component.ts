@@ -62,6 +62,10 @@ export class HabilidadesComponent implements OnInit {
     )
   }
 
+  popOld(hab: Habilidad){
+    this.habilidad = this.habilidad.filter( (e) => e.id_habilidades !== hab.id_habilidades)
+  }
+
   //-------- Interfaces ----------
 
   interfaceCardEdit: boolean = false;

@@ -4,12 +4,15 @@
         <div class="container-titulo">
             
             <h2 class="titulo proyectos-titulo">Proyectos</h2>
-
-            <button
-                class="btn btn-warning"               
+            
+            <button 
                 *ngIf="showEditInterface"
-                (click)="interfaceAdd()"
-            >Agregar proyecto</button>    
+                type="button" 
+                class="btn btn-warning" 
+                data-bs-toggle="modal" 
+                data-bs-target="#proyectoAddModal" 
+                data-bs-whatever="@mdo"
+            >Agregar proyecto</button>
             
             
         </div>
@@ -27,14 +30,14 @@
         </div>
 
         <app-proyectos-card-add
-            *ngIf="interfaceCardAdd"
+            *ngIf="showEditInterface"
             (onAddProyecto)="addProyecto($event)" 
-            (cancel)="interfaceAdd()" 
         ></app-proyectos-card-add>
         
         <app-proyectos-card-edit
                 *ngIf="interfaceCardEdit"
                 (onAddProyecto)="addProyecto($event)"
+                (onAddProyecto)="popOld($event)"
                 [proy]="onEdit"
                 (cancel)="interfaceEdit()"
             ></app-proyectos-card-edit>

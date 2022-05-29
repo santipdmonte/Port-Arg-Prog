@@ -1,14 +1,20 @@
 <section id="wrapper">
     <section id="one" class="cont-experiencias">
 
+        
         <div class="container-titulo">
             <h2 class="titulo experiencias-titulo">Experiencias</h2>
-            <button
-                class="btn btn-warning"               
+            <button 
                 *ngIf="showEditInterface"
-                (click)="interfaceAdd()"
-            > Agregar Experiencia</button>   <!--- *ngIf="showEditInterface" -->
+                type="button" 
+                class="btn btn-outline-warning btn-100" 
+                data-bs-toggle="modal" 
+                data-bs-target="#experienciaAddModal" 
+                data-bs-whatever="@mdo"
+            >Agregar Experiencia</button>
         </div>
+        
+        
         
         <div class="cont-experiencias-cards">
 
@@ -21,14 +27,14 @@
             ></app-experiencia-card>          
 
             <app-experiencia-card-add
-                *ngIf="interfaceCardAdd"
                 (onAddExperiencia)="addExperiencia($event)" 
-                (cancel)="interfaceAdd()"  
-            ></app-experiencia-card-add>    <!---- [ngModel]="expe"     [toEditExpe]="toEditexpe"  ngIf-->
+            ></app-experiencia-card-add> <!---- [ngModel]="expe"     [toEditExpe]="toEditexpe"  ngIf-->
+                
 
             <app-experiencias-card-edit
                 *ngIf="interfaceCardEdit"
                 (onAddExperiencia)="addExperiencia($event)"
+                (onAddExperiencia)="popOld($event)"
                 [expe]="onEdit"
                 (cancel)="interfaceEdit()"
             ></app-experiencias-card-edit>

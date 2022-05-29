@@ -61,6 +61,10 @@ export class ProyectosComponent implements OnInit {
     )
   }
 
+  popOld(proy: Proyecto){
+    this.proyecto = this.proyecto.filter( (p) => p.id_proyectos !== proy.id_proyectos)
+  }
+
   //-------- Interfaces ----------
 
   interfaceCardEdit: boolean = false;

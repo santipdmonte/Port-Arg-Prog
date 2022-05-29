@@ -51,8 +51,9 @@
 </div>
     </form> -->
 
-    <button
-        deleay="3s" 
+
+
+    <button 
         type="button" 
         class="btn btn-outline-info btn-100" 
         data-bs-toggle="modal" 
@@ -61,7 +62,12 @@
     >Editar {{this.educacionForm.value.institucion_edu}}</button>
     
 
-    <div class="modal fade" id="editEducacionModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div 
+        class=" modal fade" 
+        id="editEducacionModal"
+        tabindex="-1" 
+        aria-labelledby="exampleModalLabel" 
+        aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -132,7 +138,7 @@
                             class="btn btn-success"
                             [disabled]="!educacionForm.valid"
                             data-bs-dismiss="modal"
-                        >Guardar cambios</button> <!-- type="submit" -->
+                        >Guardar cambios</button> 
     
                     </div>
     
@@ -142,5 +148,8 @@
           </div>
         </div>
       </div>
+
+
+      
     
  

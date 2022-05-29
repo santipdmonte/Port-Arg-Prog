@@ -4,6 +4,7 @@
     gap: 40px;
     justify-content:center;
     align-items:center;
+    
 }
 .cont-form{
     display: flex;
@@ -24,4 +25,8 @@
 .btn-container{
     display:flex;
     justify-content: space-evenly;
+}
+
+.modal{
+    color:#4c5c96;
 }

@@ -1,3 +1,4 @@
+<!-- 
 <div class="content">
     <circle-progress        
         title="{{this.habilidadForm.value.nombre_habilidad}}"
@@ -36,7 +37,6 @@
                 max="100"
                 step="5"
             >  
-            <!--{{this.habilidadForm.get(rango)}}-->
         </div>
         
         
@@ -60,3 +60,93 @@
     </form>
 
 </div>
+
+-->
+
+<div class="modal fade" id="habilidadAddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Agregar habilidad</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="content modal-body">
+
+            <circle-progress        
+                title="{{this.habilidadForm.value.nombre_habilidad}}"
+                [percent]="this.habilidadForm.value.rango || 0"
+                [subtitle]="toString(this.habilidadForm.value.rango || 0)"
+                class="circle"       
+                [space]="-10" 
+                [radius]="100" 
+                [outerStrokeWidth]="10"
+                [innerStrokeWidth]="10" 
+                [outerStrokeColor]="'#4882c2'" 
+                [innerStrokeColor]="'#e7e8ea'" 
+                [animation]="true"
+                [animationDuration]="1000">  
+            </circle-progress>
+
+            <form
+                class="cont-form"
+                (ngSubmit)="onSubmit()" 
+                enctype="multipart/form-data" 
+                [formGroup]="habilidadForm"
+            >
+                <div class="mb-3">
+
+                    <label 
+                        for="recipient-name"                
+                        class="col-form-label"
+                    >Ingresar nombre del lenguaje/habilidad</label>
+                    <input 
+                        type="text" 
+                        class="form-control" 
+                        id="recipient-name"
+                        name="nombre_habilidad"           
+                        formControlName="nombre_habilidad"
+                        type="text"
+                        placeholder="Nombre del lenguaje/habilidad..."
+                    >
+
+                </div>
+                
+                <div class="mb-3">
+                    <label for="message-text" class="col-form-label">Rango: %</label>
+                    <input 
+                        class="form-control" 
+                        id="rango"
+                        name="rango"
+                        type="range"
+                        formControlName="rango"           
+                        min="0"
+                        max="100"
+                        step="5"
+                    >
+                </div>
+
+                <div class="modal-footer">
+
+                    <button 
+                        type="button" 
+                        class="btn btn-danger" 
+                        data-bs-dismiss="modal"
+                    >Cancel</button>
+        
+                    <button  
+                        type="submit"
+                        class="btn btn-success"                        
+                        value="Guardar habilidad" 
+                        class="btn btn-success"
+                        [disabled]="!habilidadForm.valid"
+                        data-bs-dismiss="modal"
+                    >Guardar</button> <!-- type="submit" -->
+
+                </div>
+
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </div>

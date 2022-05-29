@@ -15,7 +15,7 @@ import { Observable, of } from 'rxjs';
 
 export class EducacionComponent implements OnInit {
 
-  showEditInterface: boolean = true;
+  showEditInterface: boolean = false;
   subscription?: Subscription;
   educacion: Educacion[] = [];
   editEducacion: Educacion = {};
@@ -46,7 +46,8 @@ export class EducacionComponent implements OnInit {
   public toEditEdu = new EventEmitter();
 
   onEdit: Educacion = {};
-  
+
+
   ToEdit(edu: Educacion){
     this.toEditEdu.emit(); 
     this.onEdit = edu;
