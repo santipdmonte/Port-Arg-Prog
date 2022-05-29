@@ -48,14 +48,20 @@ export class InicioSesionComponent implements OnInit {
     this.userService.validar(this.userForm.value).subscribe(
       (userResponse: boolean) => {this.userResponse = userResponse
       }); 
+    this.status();
+  }
 
+  contraIncorrecta: boolean = false;
+
+  status(){
+    console.log(this.userResponse)
     if (this.userResponse){  
       this.userValid = true;
-      console.log(this.userValid)
+      this.contraIncorrecta = false;
       this.loginSuccess.emit();
     }
     else if (!this.userResponse) {
-      alert('Contraseña incorrecta');
+      this.contraIncorrecta = true
     }
   }
 

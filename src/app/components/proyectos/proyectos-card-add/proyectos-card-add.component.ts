@@ -39,22 +39,19 @@ export class ProyectosCardAddComponent implements OnInit {
         descripcion_proyecto: ['',Validators.required],
         url_foto_proyecto: ['assets/img/civet-web.png'],
         url_proyecto: [''],
-        personas_id_persona: ['1'],
+        personas_id_persona: [1],
       })
     }
   
     onSubmit(){
       this.onAddProyecto.emit(this.proyectoForm.value);
-      //this.reset();
+      this.proyectoForm.reset({
+        id_proyectos: '' ,
+        nombre_proyecto: '' ,
+        descripcion_proyecto: '',
+        url_foto_proyecto: 'assets/img/civet-web.png',
+        url_proyecto: '',
+        personas_id_persona: 1,
+      });
     }
-
-    reset() {
-      this.proyectoForm.value.id_proyectos = [''],
-      this.proyectoForm.value.nombre_proyecto = [''],
-      this.proyectoForm.value.descripcion_proyecto = [''],
-      this.proyectoForm.value.url_foto_proyecto = ['assets/img/civet-web.png'],
-      this.proyectoForm.value.url_proyecto = [''],
-      this.proyectoForm.value.personas_id_persona = ['1']
-  }
-
 }

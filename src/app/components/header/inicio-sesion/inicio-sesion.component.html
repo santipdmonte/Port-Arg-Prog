@@ -16,7 +16,10 @@
             type="password"
             formControlName="user_password"
         >
-
+        <p  
+            *ngIf="contraIncorrecta"
+            class="contraIncorrecta"
+        >*Contraseña incorrecta</p>
 
         <input 
             class="btn btn-success"

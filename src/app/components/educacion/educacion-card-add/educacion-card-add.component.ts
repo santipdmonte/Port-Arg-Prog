@@ -38,7 +38,7 @@ export class EducacionCardAddComponent implements OnInit {
       institucion_edu: ['',Validators.required] ,
       descripcion_edu: ['',Validators.required],
       url_foto_edu: ['assets/img/pic04.jpg'],
-      personas_id_persona: ['1'],
+      personas_id_persona: [1],
     })
 
   }
@@ -47,6 +47,13 @@ export class EducacionCardAddComponent implements OnInit {
   onSubmit(){
     this.onAddEducacion.emit(this.educacionForm.value);
     this.cancelClick();
+    this.educacionForm.reset({
+      id_educacion: '' ,
+      institucion_edu: '' ,
+      descripcion_edu: '',
+      url_foto_edu: 'assets/img/pic04.jpg',
+      personas_id_persona: 1,
+    });
   }
 
 

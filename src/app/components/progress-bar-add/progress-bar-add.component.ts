@@ -36,7 +36,7 @@ export class ProgressBarAddComponent implements OnInit {
       id_habilidades: [''] ,
       nombre_habilidad: ['',Validators.required] ,
       rango: [,Validators.required],
-      personas_id_persona: ['1'],
+      personas_id_persona: [1],
     })
 
   }
@@ -44,6 +44,12 @@ export class ProgressBarAddComponent implements OnInit {
   onSubmit(){
     this.onAddHabilidad.emit(this.habilidadForm.value);
     this.cancel.emit();
+    this.habilidadForm.reset({
+      id_habilidades: '' ,
+      nombre_habilidad: '' ,
+      rango: '',
+      personas_id_persona: 1,
+    });
   }
 
   @Output() cancel: EventEmitter<any> = new EventEmitter();

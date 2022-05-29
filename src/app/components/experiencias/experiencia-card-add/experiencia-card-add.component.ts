@@ -39,7 +39,7 @@ export class ExperienciaCardAddComponent implements OnInit {
         nombre_expe: ['',Validators.required] ,
         descripcion_expe: ['',Validators.required],
         url_foto_expe: ['assets/img/pic04.jpg'],
-        personas_id_persona: ['1'],
+        personas_id_persona: [1],
       })
   
     }
@@ -47,7 +47,15 @@ export class ExperienciaCardAddComponent implements OnInit {
   
   onSubmit(){ 
     this.onAddExperiencia.emit(this.experienciaForm.value);
+    console.log(this.experienciaForm.value);
     this.cancelClick();
+    this.experienciaForm.reset({
+      id_experiencias: '' ,
+      nombre_expe: '' ,
+      descripcion_expe: '',
+      url_foto_expe: 'assets/img/pic04.jpg',
+      personas_id_persona: 1,
+    });
   }
 
   
