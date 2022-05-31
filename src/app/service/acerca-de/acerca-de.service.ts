@@ -16,7 +16,7 @@ export class AcercaDeService {
 
   private acer: AcercaDe = {};
   
-  private apiUrl = 'http://localhost:8080/acercade'
+  private apiUrl = 'https://pure-chamber-09792.herokuapp.com/acercade'
 
   constructor(
     private http:HttpClient

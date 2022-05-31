@@ -16,7 +16,7 @@ export class UserService {
   
   private user: User = {};
   
-  private apiUrl = 'http://localhost:8080/user'
+  private apiUrl = 'https://pure-chamber-09792.herokuapp.com/user'
 
   constructor(
     private http:HttpClient

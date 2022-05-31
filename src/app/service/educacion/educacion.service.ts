@@ -16,7 +16,7 @@ export class EducacionService {
 
   private edu: Educacion = {};
   
-  private apiUrl = 'http://localhost:8080/educacion'
+  private apiUrl = 'https://pure-chamber-09792.herokuapp.com/educacion'
 
   constructor(
     private http:HttpClient

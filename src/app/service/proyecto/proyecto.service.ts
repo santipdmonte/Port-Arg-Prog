@@ -16,7 +16,7 @@ export class ProyectoService {
 
   private proy: Proyecto = {};
   
-  private apiUrl = 'http://localhost:8080/proyecto'
+  private apiUrl = 'https://pure-chamber-09792.herokuapp.com/proyecto'
 
   constructor(
     private http:HttpClient

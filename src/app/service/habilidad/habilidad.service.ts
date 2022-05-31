@@ -16,7 +16,7 @@ export class HabilidadService {
 
   private hab: Habilidad = {};
   
-  private apiUrl = 'http://localhost:8080/habilidad'
+  private apiUrl = 'https://pure-chamber-09792.herokuapp.com/habilidad'
 
   constructor(
     private http:HttpClient

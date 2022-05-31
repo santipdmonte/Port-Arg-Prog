@@ -16,7 +16,7 @@ export class ExperienciaService {
 
   private expe: Experiencia = {};
   
-  private apiUrl = 'http://localhost:8080/experiencia'
+  private apiUrl = 'https://pure-chamber-09792.herokuapp.com/experiencia'
 
   constructor(
     private http:HttpClient
