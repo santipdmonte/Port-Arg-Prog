@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { User } from '../../Models/user'
+import { User } from '../../Models/User'
 
 const httpOptions = {
   headers: new HttpHeaders ({
@@ -23,6 +23,7 @@ export class UserService {
   ) { }
 
     validar(user: User): Observable<boolean>{
+      console.log(user)
       return this.http.post<boolean>(`${this.apiUrl}/validar`, user, httpOptions);
     }
 

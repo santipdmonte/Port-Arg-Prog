@@ -2,7 +2,7 @@ import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import { UserService } from 'src/app/service/user/user.service';
-import { User } from '../../../Models/user'
+import { User } from '../../../Models/User'
 
 @Component({
   selector: 'app-inicio-sesion',
@@ -12,8 +12,6 @@ import { User } from '../../../Models/user'
 export class InicioSesionComponent implements OnInit {
 
   faTimesCircle = faTimesCircle
-
-  userResponse: boolean = false;
   user: User = {};
 
   public userForm = new FormGroup({
@@ -40,27 +38,29 @@ export class InicioSesionComponent implements OnInit {
     })
   }
 
+  //------- Validacion --------
+
   userValid: boolean = false;
   @Output() loginSuccess = new EventEmitter<boolean>();
 
   onSubmit(){
 
     this.userService.validar(this.userForm.value).subscribe(
-      (userResponse: boolean) => {this.userResponse = userResponse
-      }); 
+      (userResponse: boolean) => this.userValid = userResponse
+      ); 
+    console.log(this.userForm.value)
+    console.log('estadoReal: ' + this.userValid)
     this.status();
   }
 
   contraIncorrecta: boolean = false;
 
   status(){
-    console.log(this.userResponse)
-    if (this.userResponse){  
-      this.userValid = true;
+    if (this.userValid){  
       this.contraIncorrecta = false;
       this.loginSuccess.emit();
     }
-    else if (!this.userResponse) {
+    else if (!this.userValid) {
       this.contraIncorrecta = true
     }
   }

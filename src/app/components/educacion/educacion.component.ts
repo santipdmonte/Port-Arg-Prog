@@ -46,8 +46,7 @@ export class EducacionComponent implements OnInit {
   public toEditEdu = new EventEmitter();
 
   onEdit: Educacion = {};
-
-
+  
   ToEdit(edu: Educacion){
     this.toEditEdu.emit(); 
     this.onEdit = edu;
