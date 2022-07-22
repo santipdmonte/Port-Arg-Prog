@@ -22,14 +22,15 @@ a{
     margin: 20px;
     display: flex;
     justify-content: space-evenly;
-    width: 35%;
+    width: 28%;
     align-items: center;
     text-align: center;
 }
 
 .media-cont{
     display: flex;
-    gap: 25px;  
+    gap: 25px;
+    margin: 10px;  
 }
 
 .media, .menu, .log{

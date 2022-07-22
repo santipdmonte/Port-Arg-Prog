@@ -48,6 +48,7 @@ export class InicioSesionComponent implements OnInit {
     this.userService.validar(this.userForm.value).subscribe(
       (userResponse: boolean) => this.userValid = userResponse
       ); 
+
     console.log(this.userForm.value)
     console.log('estadoReal: ' + this.userValid)
     this.status();
@@ -57,7 +58,6 @@ export class InicioSesionComponent implements OnInit {
 
   status(){
     if (this.userValid){  
-      this.contraIncorrecta = false;
       this.loginSuccess.emit();
     }
     else if (!this.userValid) {
