@@ -26,6 +26,33 @@
 }
 
 
+/*--------------------------------------- STYLE DIVIDER ------------------------------------*/
+
+
+.blue {
+    background-color: #ffffff;
+}
+
+#third {
+    height: auto;
+    min-height: 100px;
+    position: relative;
+}
+
+.separator {
+    position: absolute;
+    top: 0;
+}
+
+.separator-bottom {
+    position: absolute;
+    bottom: 0;
+}
+
+#five .section-title {
+    padding-bottom:2.5em;
+}
+
 
 
 
