@@ -40,6 +40,8 @@
 
 .img-personal{
     width:200px;
+    height:200px;
+    max-height:200px;
     height:auto;
     border-radius: 60%;
 }
@@ -96,4 +98,23 @@
 
 #five .section-title {
     padding-bottom:2.5em;
+}
+
+
+/* --------- Media ---------*/
+
+
+@media screen and (max-width:600px){
+
+    .acercaDe-cont{
+        display:flex;
+        flex-direction:column;
+        text-align: left;
+        padding: 20px;
+    }
+
+    .img-personal{
+        margin: auto;
+    }
+
 }
