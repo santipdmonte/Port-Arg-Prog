@@ -22,7 +22,7 @@ a{
     margin: 20px;
     display: flex;
     justify-content: space-evenly;
-    width: 28%;
+    width: 350px;
     align-items: center;
     text-align: center;
 }
@@ -67,3 +67,39 @@ a{
 
 @import "~bootstrap-icons/font/bootstrap-icons.css";
 
+
+/* --------- Media ---------*/
+
+.menu-list{
+    cursor: pointer;
+    color:aliceblue; 
+}
+
+.media-list-cont{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.media-list{
+    color: #2e3141;
+}
+
+.dropdown{
+    display: none;
+}
+
+@media screen and (max-width:600px){
+    .media, .menu, .log{
+        text-decoration: none;
+        color: rgb(128, 0, 255);
+    }
+
+    .nav-container{
+        display: none;
+    }
+
+    .dropdown{
+        display:flex;
+        margin:20px
+    }
+}
