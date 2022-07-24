@@ -33,6 +33,7 @@
         *ngIf="interfaceCard"
         class="card"
         (onEditAcercaDe)="editAcercaDe($event)"
+        (onEditAcercaDe)="popOld($event)"
         [acer]="onEdit"
         (cancel)="cancelInterfaceCard()"
     ></app-acerca-de-edit>

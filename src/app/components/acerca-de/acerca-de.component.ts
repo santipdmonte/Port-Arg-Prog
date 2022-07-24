@@ -62,6 +62,10 @@ export class AcercaDeComponent implements OnInit {
     this.interfaceEdit();
   }
 
+  popOld(acer: AcercaDe){
+    this.acercade = this.acercade.filter( (a) => a.id_acerca_de !== acer.id_acerca_de)
+  }
+
   // ---------- InterfaceCard ---------
 
   interfaceCard: boolean = false;
