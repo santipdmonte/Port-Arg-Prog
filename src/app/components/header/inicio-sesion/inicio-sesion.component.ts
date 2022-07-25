@@ -46,12 +46,12 @@ export class InicioSesionComponent implements OnInit {
   onSubmit(){
 
     this.userService.validar(this.userForm.value).subscribe(
-      (userResponse: boolean) => this.userValid = userResponse
-      ); 
-      
-    console.log(this.userForm.value)
-    console.log('estadoReal: ' + this.userValid)
-    this.status();
+      (userResponse: boolean) => {
+        this.userValid = userResponse;
+        console.log(this.userForm.value)
+        this.status();
+      }
+    ); 
   }
 
   contraIncorrecta: boolean = false;
