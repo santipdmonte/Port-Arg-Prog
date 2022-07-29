@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 import { EducacionService } from './service/educacion/educacion.service';
 import { PersonasService } from './service/personas/personas.service';
 
+import * as AOS from 'aos';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -17,7 +19,9 @@ export class AppComponent implements OnInit {
   ){}
 
   ngOnInit(): void {
-
+    AOS.init({
+      duration: 900,
+    });
   }
 
   loginSuccess(){

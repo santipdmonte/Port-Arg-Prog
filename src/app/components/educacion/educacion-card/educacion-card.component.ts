@@ -5,6 +5,9 @@ import { UiService } from 'src/app/service/ui.service';
 import { EducacionService } from 'src/app/service/educacion/educacion.service';
 import { Educacion } from '../../../Models/Educacion';
 
+import * as AOS from 'aos';
+
+
 
 @Component({
   selector: 'app-educacion-card',
@@ -30,6 +33,9 @@ export class EducacionCardComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    AOS.init({
+      duration: 900
+    });
   }
 
   deleteClick(){

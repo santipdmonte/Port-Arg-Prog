@@ -5,7 +5,7 @@ import { UiService } from 'src/app/service/ui.service';
 import { ExperienciaService } from 'src/app/service/experiencia/experiencia.service';
 import { Experiencia } from '../../../Models/Experiencia';
 
-import { faTimes } from '@fortawesome/free-solid-svg-icons';
+import * as AOS from 'aos';
 
 
 
@@ -20,8 +20,6 @@ export class ExperienciaCardComponent implements OnInit {
   subscription?: Subscription;
   experiencia: Experiencia[] = [];
 
-  faTimes = faTimes
-
   @Input() expe: Experiencia = {};
   @Output() DeleteClick = new EventEmitter();
   @Output() EditClick = new EventEmitter();
@@ -35,6 +33,7 @@ export class ExperienciaCardComponent implements OnInit {
    }
 
   ngOnInit(): void {
+    AOS.init();
   }
 
   deleteClick(){

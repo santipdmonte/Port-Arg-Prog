@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { faGem } from '@fortawesome/free-solid-svg-icons';
 
+
 @Component({
   selector: 'app-banner',
   templateUrl: './banner.component.html',
