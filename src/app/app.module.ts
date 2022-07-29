@@ -87,7 +87,7 @@ const appRoutes: Routes = [
       "showBackground": false,
       "clockwise": true,
       "startFromZero": true,
-      "lazy": true}),
+      "lazy": false}),
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
